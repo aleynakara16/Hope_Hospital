@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Home Page</title>
+    <style>
+
+* {
+    box-sizing: border-box;
+}
+    body {
+            margin: 0;
+            background-color: #ECF4D6;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-image: url('images/3160.jpg');
+            height: 80vh;
+            position: relative;
+            margin-bottom: 5px;
+    }
+
+        .inner-card1{
+        position: relative;
+        background-color:#0f0f22a1;
+        color:#e9e5ed;
+        padding: 7vh;
+        max-height: fit-content;
+    
+        }
+
+        button{
+            background-color: #427D9D;
+            color: white;
+            transition:0.3s;
+            border-radius:5px;
+        }
+
+        button:hover,s
+        button:focus {
+                background: #A9B388;
+                color: #092635;
+        }
+
+        button:active {
+                background: #5C8374;
+                color: rgb(255, 255, 255, .7);
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+                background: #5C8374;
+                color: rgba(0, 0, 0, .3);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="bg ">
+        <div class="caption">
+            <div class="row mb-3">
+                <div class="col-m-9 col-sm-12 mx-auto ">
+                    <div class="card my-md-3 bg-transparent">
+                        <div class="inner-card1 col-12">
+                            <h1 class="card-title display-4 fw-bold">ALEY<mark style="background-color:#092635;color:white">HOSPITAL</mark></h1>
+                            <hr>
+                            <p class="card-text lead pt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas veniam modi atque sed ad exercitationem incidunt recusandae nisi laborum, dolore voluptatibus! Voluptates praesentium necessitatibus ipsa recusandae. Accusamus vero eaque voluptate.
+                            </p>
+                            <button type="button" class="btn-style col-12 ">Randevu Al</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
