@@ -1,4 +1,5 @@
 using Hospital_reservation_system.Entities;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,20 @@ builder.Services.AddDbContext<DatabaseContext>(opts =>
     opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     //opts.UseLazyLoadingProxies();
 });
+
+builder.Services
+               .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+               .AddCookie(opts =>
+               {
+                   opts.Cookie.Name = ".Hospital_reservation_system.auth";
+                   opts.ExpireTimeSpan = TimeSpan.FromDays(7);//geçerlilik süresi 7 gün
+                   opts.SlidingExpiration = false;
+                   opts.LoginPath = "/Account/Login";//cookie bulamazsa yönlendirme
+                   opts.LogoutPath = "/Account/Logout";
+                   opts.AccessDeniedPath = "/Home/AccessDenied";
+               });
+
+
 
 var app = builder.Build();
 
@@ -26,6 +41,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

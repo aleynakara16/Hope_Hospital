@@ -3420,11 +3420,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\Hospital_reservation_system\\Hospital_reservation_system\\Hospital_reservation_system.csproj",
+      "projectUniqueName": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\Hospital_reservation_system.csproj",
       "projectName": "Hospital_reservation_system",
-      "projectPath": "C:\\Users\\user\\source\\repos\\Hospital_reservation_system\\Hospital_reservation_system\\Hospital_reservation_system.csproj",
+      "projectPath": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\Hospital_reservation_system.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\repos\\Hospital_reservation_system\\Hospital_reservation_system\\obj\\",
+      "outputPath": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

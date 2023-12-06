@@ -70,15 +70,20 @@
         <div class="caption">
             <div class="row mb-3">
                 <div class="col-m-9 col-sm-12 mx-auto ">
-                    <div class="card my-md-3 bg-transparent">
+                    <div class="card my-md-5 bg-transparent">
                         <div class="inner-card1 col-12">
-                            <h1 class="card-title display-4 fw-bold">ALEY<mark style="background-color:#092635;color:white">HOSPITAL</mark></h1>
+                            <h1 class="card-title display-4 fw-bold">HOPE <mark style="background-color:#092635;color:white">HOSPITAL</mark></h1>
                             <hr>
                             <p class="card-text lead pt-4">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas veniam modi atque sed ad exercitationem incidunt recusandae nisi laborum, dolore voluptatibus! Voluptates praesentium necessitatibus ipsa recusandae. Accusamus vero eaque voluptate.
-                            </p>
-                            <button type="button" class="btn-style col-12 ">Randevu Al</button>
-                        </div>
+                            </p> @if (User.Identity.IsAuthenticated)
+                                {
+                                    if (User.IsInRole("user"))
+                                    {
+                                        <button type="button" class="btn-style col-12 ">Randevu Al</button>
+                                    }
+                                 }
+                                </div>
                     </div>
                 </div>
             </div>
