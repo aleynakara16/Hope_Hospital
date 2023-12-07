@@ -74,16 +74,23 @@
                         <div class="inner-card1 col-12">
                             <h1 class="card-title display-4 fw-bold">HOPE <mark style="background-color:#092635;color:white">HOSPITAL</mark></h1>
                             <hr>
-                            <p class="card-text lead pt-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas veniam modi atque sed ad exercitationem incidunt recusandae nisi laborum, dolore voluptatibus! Voluptates praesentium necessitatibus ipsa recusandae. Accusamus vero eaque voluptate.
-                            </p> @if (User.Identity.IsAuthenticated)
+                            @if (User.Identity.IsAuthenticated)
                                 {
                                     if (User.IsInRole("user"))
-                                    {
-                                        <button type="button" class="btn-style col-12 ">Randevu Al</button>
-                                    }
-                                 }
-                                </div>
+                                {
+                                    <p class="card-text lead pt-4">
+                                       Sağlıklı bir yaşam için hastanemize hoş geldiğiniz.Aşağıdan randevu alabilirsiniz.
+                                    </p>
+                                    <button type="button" class="btn-style col-12 ">Randevu Al</button>
+                                }
+                            }
+                            else
+                            {
+                                <p class="card-text lead pt-4">
+                                    Sağlıklı bir yaşam için hastanemize hoş geldiğiniz.Lütfen randevu almak için giriş yapınız.Kaydınız yoksa kayıt olunuz.
+                                </p>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

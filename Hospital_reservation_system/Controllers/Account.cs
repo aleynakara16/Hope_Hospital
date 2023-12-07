@@ -120,7 +120,54 @@ namespace Hospital_reservation_system.Controllers
 
         public IActionResult Profil()
         {
+            ProfileInfoLoader();
+
             return View();
+        }
+
+        private void ProfileInfoLoader()
+        {
+            Guid userid = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            User user = _databaseContext.Users.SingleOrDefault(x => x.Id == userid);
+
+            ViewData["Username"] = user.Username;
+        }
+
+        [HttpPost]
+        public IActionResult ProfileChangeFullName([Required][StringLength(50)] string? Username)
+        {
+            if (ModelState.IsValid)
+            {
+                Guid userid = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                User user = _databaseContext.Users.SingleOrDefault(x => x.Id == userid);
+
+                user.Username =Username;
+                _databaseContext.SaveChanges();
+
+                return RedirectToAction(nameof(Profil));
+            }
+
+            ProfileInfoLoader();
+            return View("Profil");
+        }
+
+        [HttpPost]
+        public IActionResult ProfileChangePassword([Required][MinLength(6)][MaxLength(16)] string? password)
+        {
+            if (ModelState.IsValid)
+            {
+                Guid userid = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                User user = _databaseContext.Users.SingleOrDefault(x => x.Id == userid);
+
+
+                user.Password = password;
+                _databaseContext.SaveChanges();
+
+                ViewData["result"] = "PasswordChanged";
+            }
+
+            ProfileInfoLoader();
+            return View("Profil");
         }
 
     }
