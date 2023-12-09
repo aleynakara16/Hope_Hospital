@@ -19,19 +19,16 @@ namespace Hospital_reservation_system.Entities
         public string Password { get; set; }
 
         [Required]
-        public Enums.Sex Sex { get; set; }
+        public String Department { get; set; }
 
         [Required]
-        public Enums.HospitalDepartment Department { get; set; }
-
-        [Required]
-        public Enums.Policlinic Policlinic { get; set; }
+        public String Policlinic { get; set; }
 
         public bool Locked { get; set; } = false;// kullanıcıyı silmek yerine pasife almak için kullanıcaz
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         [Required]
         [StringLength(50)]
-        public string Role { get; set; } = "admin";
+        public string Role { get; set; } = "user";
     }
 }

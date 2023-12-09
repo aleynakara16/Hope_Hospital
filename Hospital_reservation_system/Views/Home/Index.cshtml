@@ -3,7 +3,6 @@
 }
 
 <!DOCTYPE html>
-<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,7 +80,8 @@
                                     <p class="card-text lead pt-4">
                                        Sağlıklı bir yaşam için hastanemize hoş geldiğiniz.Aşağıdan randevu alabilirsiniz.
                                     </p>
-                                    <button type="button" class="btn-style col-12 ">Randevu Al</button>
+                                    <a style="text-decoration: none;color:white" asp-controller="Appointment" asp-action="Create"><button type="button" class="btn-style col-12">Randevu Al</button>
+                                    </a>
                                 }
                             }
                             else

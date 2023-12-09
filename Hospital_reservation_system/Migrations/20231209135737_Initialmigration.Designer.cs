@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hospital_reservation_system.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231207154741_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20231209135737_Initialmigration")]
+    partial class Initialmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,35 @@ namespace Hospital_reservation_system.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Hospital_reservation_system.Entities.Admin", b =>
+                {
+                    b.Property<Guid>("Admin_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Admin_Password")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Admin_mail")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Admin_Id");
+
+                    b.ToTable("Admins");
+                });
+
             modelBuilder.Entity("Hospital_reservation_system.Entities.Doctor", b =>
                 {
                     b.Property<Guid>("Id")
@@ -34,8 +63,9 @@ namespace Hospital_reservation_system.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Department")
-                        .HasColumnType("int");
+                    b.Property<string>("Department")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Locked")
                         .HasColumnType("bit");
@@ -45,16 +75,14 @@ namespace Hospital_reservation_system.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("Policlinic")
-                        .HasColumnType("int");
+                    b.Property<string>("Policlinic")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
-
-                    b.Property<int>("Sex")
-                        .HasColumnType("int");
 
                     b.Property<string>("name")
                         .IsRequired()

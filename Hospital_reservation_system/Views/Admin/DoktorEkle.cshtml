@@ -1,0 +1,71 @@
+﻿@model DoctorViewModel
+@{
+    ViewData["Title"] = "Doktor Ekle";
+}
+
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <h1 class="display-4 border-bottom text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="id" class="form-label">TC</label>
+                <input asp-for="id" class="form-control" placeholder="Tc..." />
+                <span asp-validation-for="id" class="text-danger small"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="name" class="form-label">UserName</label>
+                <input asp-for="name" class="form-control" placeholder="name.." />
+                <span asp-validation-for="name" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="PassWord!" />
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="RePassword" class="form-label">Re-Password</label>
+                <input asp-for="RePassword" type="password" class="form-control" placeholder="PassWord" />
+                <span asp-validation-for="RePassword" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                    <label class="form-select" asp-for="Department" for="inputState">Bölüm:</label>
+                    <select id="inputState" class="form-control">
+                    <option value="uruloji">Üroloji</option>
+                    <option value="dahiliye">Dahiliye</option>
+                    <option value="noroloji">Nöroloji</option>
+                    <option value="jinokolog">Jinokoloji</option>
+                    <option selected value="cildiye">Cildiye</option>
+                    <option value="pediatri">Pediatri</option>
+                </select>
+             </div>
+
+            <div class="form-group mb-3">
+                <label class="form-select" asp-for="Policlinic" for="inputState">PoliClinic:</label>
+                <select id="inputState" class="form-control">
+                    <option value="ist">Istanbul</option>
+                    <option value="ankara">Ankara</option>
+                    <option value="antalya">Antalya</option>
+
+                </select>
+            </div>
+
+
+            <div class="form-group d-grid mb-3">
+                <button type="submit" class="btn btn-primary d-block"><i class="fa-solid fa-paper-plane me-2"></i>Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

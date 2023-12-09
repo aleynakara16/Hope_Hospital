@@ -3,7 +3,6 @@ using Hospital_reservation_system.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
-//using NETCore.Encrypt.Extensions;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using System.Security.Claims;
@@ -111,7 +110,8 @@ namespace Hospital_reservation_system.Controllers
 
             return View(model);
         }
-        
+
+
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
