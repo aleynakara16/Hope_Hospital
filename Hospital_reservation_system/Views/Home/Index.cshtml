@@ -75,12 +75,21 @@
                             <hr>
                             @if (User.Identity.IsAuthenticated)
                                 {
-                                    if (User.IsInRole("user"))
+                                if (User.IsInRole("user"))
                                 {
                                     <p class="card-text lead pt-4">
                                        Sağlıklı bir yaşam için hastanemize hoş geldiğiniz.Aşağıdan randevu alabilirsiniz.
                                     </p>
                                     <a style="text-decoration: none;color:white" asp-controller="Appointment" asp-action="Create"><button type="button" class="btn-style col-12">Randevu Al</button>
+                                    </a>
+                                }
+                                if (User.IsInRole("doctor"))
+                                {
+                                    <p class="card-text lead pt-4">
+                                        Doctor @User.FindFirst("Username").Value hoş geldiniz.Randevularınıza aşağıdan ulaşabilirsiniz.
+                                    </p>
+                                    <a style="text-decoration: none;color:white" asp-controller="" asp-action="">
+                                        <button type="button" class="btn-style col-12">Randevularım</button>
                                     </a>
                                 }
                             }

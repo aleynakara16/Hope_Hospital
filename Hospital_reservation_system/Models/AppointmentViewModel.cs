@@ -6,25 +6,22 @@ namespace Hospital_reservation_system.Models
 {
     public class AppointmentViewModel
     {
-        [Display(Name = "Şehirler")]
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız!")]
-        public string city { get; set; }
+        public string currentUserID { get; set; }
 
-        [Display(Name = "Hastaneler")]
         [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
-        public string hospitalName { get; set; }
+        public string selecktedDoctorID { get; set; }
 
+        [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
+        public string selectedDoctorName { get; set; }
 
-        [Display(Name = "Poliklinikler")]
         [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
         public string policlinicName { get; set; }
 
-
-        public int DoctorId { get; set; }
-
-        [Display(Name = "Doktorlar")]
         [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
-        public string DoctorName { get; set; }
+        public string departmentName { get; set; }
 
+        [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
+        public DateTime dateTime { get; set; }
     }
 }

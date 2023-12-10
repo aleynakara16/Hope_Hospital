@@ -3,7 +3,9 @@
     "",
     "\\Hospital_reservation_system",
     "\\Hospital_reservation_system\\Controllers",
-    "\\Hospital_reservation_system\\obj"
+    "\\Hospital_reservation_system\\obj",
+    "\\Hospital_reservation_system\\Views",
+    "\\Hospital_reservation_system\\Views\\Account"
   ],
   "SelectedNode": "\\Hospital_reservation_system.sln",
   "PreviewInSolutionExplorer": false

@@ -8,7 +8,7 @@ namespace Hospital_reservation_system.Entities
     public class Doctor
     {
         [Key]
-        public Guid Id { get; set; } //benzersin olması için guid kullanıldı
+        public String Id { get; set; } //benzersin olması için guid kullanıldı
 
         [Required]
         [StringLength(30)]
@@ -19,9 +19,6 @@ namespace Hospital_reservation_system.Entities
         public string Password { get; set; }
 
         [Required]
-        public String Department { get; set; }
-
-        [Required]
         public String Policlinic { get; set; }
 
         public bool Locked { get; set; } = false;// kullanıcıyı silmek yerine pasife almak için kullanıcaz
@@ -29,6 +26,6 @@ namespace Hospital_reservation_system.Entities
 
         [Required]
         [StringLength(50)]
-        public string Role { get; set; } = "user";
+        public string Role { get; set; } = "doctor";
     }
 }

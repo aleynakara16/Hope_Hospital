@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hospital_reservation_system.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231209135737_Initialmigration")]
-    partial class Initialmigration
+    [Migration("20231210120105_initialMigration")]
+    partial class initialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,9 +27,8 @@ namespace Hospital_reservation_system.Migrations
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Admin", b =>
                 {
-                    b.Property<Guid>("Admin_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Admin_Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Admin_Password")
                         .IsRequired()
@@ -56,9 +55,8 @@ namespace Hospital_reservation_system.Migrations
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Doctor", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -96,9 +94,8 @@ namespace Hospital_reservation_system.Migrations
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.User", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");

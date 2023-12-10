@@ -1,4 +1,5 @@
 ﻿using Hospital_reservation_system.Entities;
+using Hospital_reservation_system.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,8 +21,13 @@ namespace Hospital_reservation_system.Controllers
         }
         public IActionResult Create()
         {
-            var doctors = _databaseContext.Doctors.OrderBy(x => x.name).ToList();
-            ViewBag.Doctors = new SelectList(doctors, "Id", "name");
+            // Şehir isimlerini alın
+            // var cities = _databaseContext.Hospitals.Select(h => h.City).Distinct().ToList();
+            // ViewBag.Cities = new SelectList(cities);
+
+            // Boş bir AppointmentViewModel oluşturun
+            //var model = new AppointmentViewModel();
+
             return View();
         }
         public IActionResult Delete()
@@ -32,5 +38,7 @@ namespace Hospital_reservation_system.Controllers
         {
             return View();
         }
+
+
     }
 }

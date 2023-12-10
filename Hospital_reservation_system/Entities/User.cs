@@ -8,7 +8,7 @@ namespace Hospital_reservation_system.Entities
     public class User
     {
         [Key]
-        public Guid Id { get; set; } //benzersin olması için guid kullanıldı
+        public String Id { get; set; } //benzersin olması için guid kullanıldı
 
         [Required]
         [StringLength(30)]
