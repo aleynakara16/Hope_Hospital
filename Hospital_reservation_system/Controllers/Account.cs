@@ -34,10 +34,10 @@ namespace Hospital_reservation_system.Controllers
             if (ModelState.IsValid)
             {
 
-                User user = _databaseContext.Users.SingleOrDefault(x => x.Username.ToLower() == model.Username.ToLower() && x.Password == model.Password.ToString());
-                Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.name.ToLower() == model.Username.ToLower() && x.Password == model.Password.ToString());
-                Entities.Admin admin = _databaseContext.Admins.SingleOrDefault(x => x.Admin_mail.ToLower() == model.Username.ToLower() && x.Admin_Password == model.Password.ToString());
-
+                User user = _databaseContext.Users.SingleOrDefault(x => x.Username.ToLower() == model.Username.ToLower() && x.Password == model.Password.ToString() && x.Role=="user");
+                Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.name.ToLower() == model.Username.ToLower() && x.Password == model.Password.ToString() && x.Role == "doctor");
+                Entities.Admin admin = _databaseContext.Admins.SingleOrDefault(x => x.Admin_mail.ToLower() == model.Username.ToLower() && x.Admin_Password == model.Password.ToString() && x.Role == "admin");
+                                
                 if (user != null && doctor ==null && admin == null)
                 {//login işleri burada yapılacak
                     if (user.Locked)
@@ -99,7 +99,7 @@ namespace Hospital_reservation_system.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Username or password is incorrect.");
+                    ModelState.AddModelError("", "Username or password is incorrect. o hata ");
                 }
             }
 

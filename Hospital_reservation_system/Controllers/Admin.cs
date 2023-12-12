@@ -25,6 +25,13 @@ namespace Hospital_reservation_system.Controllers
         [AllowAnonymous]
         public IActionResult DoktorEkle()
         {
+            var policlinicList =  _databaseContext.Policlinics.ToList();
+
+            // View'e verileri gönder
+            if (policlinicList != null)
+            {
+                ViewBag.PoliclinicList = new SelectList(policlinicList, "Policlinic_Id", "Policlinic_Name");
+            }
             return View();
         }
         
@@ -65,20 +72,10 @@ namespace Hospital_reservation_system.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("DoktorEkle", "Admin");
                 }
             }
-
-            var policlinicList = _databaseContext.Policlinics.ToList();
-            // View'e verileri gönder
-            if (policlinicList != null)
-            {
-                ViewBag.PoliclinicList = new SelectList(policlinicList, "Policlinic_Id", "Policlinic_Name");
-            }
- 
-
             return View(model);
-
         }
 
         [AllowAnonymous]
@@ -122,7 +119,7 @@ namespace Hospital_reservation_system.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("AdminEkle", "Admin");
                 }
             }
 

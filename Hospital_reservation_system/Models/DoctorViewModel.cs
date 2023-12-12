@@ -26,9 +26,6 @@ namespace Hospital_reservation_system.Models
         public string RePassword { get; set; }
 
         [Required]
-        public String Department { get; set; }
-
-        [Required]
         public String Policlinic { get; set; }
 
 
