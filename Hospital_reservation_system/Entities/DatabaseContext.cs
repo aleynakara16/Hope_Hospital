@@ -14,8 +14,8 @@ namespace Hospital_reservation_system.Entities
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Policlinic> Policlinics { get; set; }
-        public DbSet<Department> Departments { get; set; }
-
+        public DbSet<Appointment> Appointments { get; set; }
+ 
 
 
     }

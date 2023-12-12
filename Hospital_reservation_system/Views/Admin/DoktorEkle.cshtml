@@ -39,11 +39,14 @@
             <div class="form-group mb-3">
                 <label name="Policlinic" asp-for="Policlinic" for="Policlinic">PoliClinic:</label>
                 <select id="Policlinic" name="Policlinic" asp-for="Policlinic" class="form-control">
-                    @foreach (var policlinic in ViewBag.PoliclinicList)
+                    @if (ViewBag.PoliclinicList != null)
                     {
-                        <option value="@policlinic.Text">@policlinic.Text</option>                  
+                        foreach (var policlinic in ViewBag.PoliclinicList)
+                        {
+                            <option value="@policlinic.Text">@policlinic.Text</option>
+                        }
                     }
-                </select>
+            </select>
             </div>
 
 

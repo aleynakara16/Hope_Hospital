@@ -4,6 +4,7 @@ using Hospital_reservation_system.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hospital_reservation_system.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20231212135946_deneme")]
+    partial class deneme
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +50,7 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Admin_Id");
 
-                    b.ToTable("Admins", (string)null);
+                    b.ToTable("Admins");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Availability", b =>
@@ -78,7 +81,7 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasIndex("DoctorId1");
 
-                    b.ToTable("Availability", (string)null);
+                    b.ToTable("Availability");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Department", b =>
@@ -92,7 +95,7 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Department_Id");
 
-                    b.ToTable("Departments", (string)null);
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Doctor", b =>
@@ -127,7 +130,7 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doctors", (string)null);
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Policlinic", b =>
@@ -141,7 +144,7 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Policlinic_Id");
 
-                    b.ToTable("Policlinics", (string)null);
+                    b.ToTable("Policlinics");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.User", b =>
@@ -172,7 +175,7 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Availability", b =>

@@ -1,6 +1,6 @@
 ﻿@model AppointmentViewModel
 
-<!DOCTYPE html>
+<html>
 <head>
     <style>
         body {
@@ -44,7 +44,6 @@
 
         </div>
 
-
         <div class="row ">
             <div class="col-lg-7 mx-auto">
                 <div class="card mt-2 mx-auto p-4 bg-light">
@@ -58,8 +57,8 @@
                                         <div class="col-md-6">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label asp-for="currentUserID"></label>
-                                                    <input asp-for="currentUserID" type="text" class="form-control" readonly >
+                                                    <label asp-for="currentUserID">TC :</label>
+                                                    <input asp-for="currentUserID" type="text" class="form-control" readonly value="@ViewBag.UserId">
 
                                                 </div>
                                             </div>
@@ -67,19 +66,25 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="form_lastname">Lastname *</label>
-                                                <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                                <label name="policlinicName" asp-for="policlinicName" for="policlinicName">Poliklinik:</label>
+                                                <select id="policlinicName" name="policlinicName" asp-for="policlinicName" class="form-control" onchange="getDoctors()">
+                                                    @foreach (var policlinic in ViewBag.PoliclinicList)
+                                                    {
+                                                        <option value="@policlinic.Text">@policlinic.Text</option>
+                                                    }
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label name="Policlinic" asp-for="policlinicName" for="Policlinic">PoliClinic:</label>
-                                                <select id="Policlinic" name="Policlinic" asp-for="policlinicName" class="form-control">
-                                                    <option selected value="ist">Istanbul</option>
-                                                    <option value="ankara">Ankara</option>
-                                                    <option value="antalya">Antalya</option>
+                                                <label name="selectedDoctorName" asp-for="selectedDoctorName" for="selectedDoctorName">Doktor:</label>
+                                                <select id="selectedDoctorName" name="selectedDoctorName" asp-for="selectedDoctorName" class="form-control">
+                                                    @foreach (var selectedDoctorName in ViewBag.selectedDoctorNameList)
+                                                    {
+                                                        <option value="@selectedDoctorName.Text">@selectedDoctorName.Text</option>
+                                                    }
                                                 </select>
                                             </div>
                                         </div>
@@ -87,25 +92,15 @@
                                             <div class="form-group">
                                                 <label asp-for="dateTime" class="control-label"></label>
                                                 <input id="form_email" type="datetime-local" datetime-local"" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-
-                                                    
-
                                             </div>
                                         </div>
                                     </div>
-                                 
                                 </div>
                             </form>
                         </div>
                     </div>
-
-
                 </div>
-                <!-- /.8 -->
-
             </div>
-            <!-- /.row-->
-
         </div>
     </div>
 

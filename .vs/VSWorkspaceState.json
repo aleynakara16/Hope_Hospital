@@ -5,6 +5,7 @@
     "\\Hospital_reservation_system\\Controllers",
     "\\Hospital_reservation_system\\Entities",
     "\\Hospital_reservation_system\\obj",
+    "\\Hospital_reservation_system\\obj\\Release",
     "\\Hospital_reservation_system\\Views",
     "\\Hospital_reservation_system\\Views\\Account"
   ],

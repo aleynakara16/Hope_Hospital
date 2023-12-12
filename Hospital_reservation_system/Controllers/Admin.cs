@@ -25,7 +25,7 @@ namespace Hospital_reservation_system.Controllers
         [AllowAnonymous]
         public IActionResult DoktorEkle()
         {
-            var policlinicList =  _databaseContext.Policlinics.ToList();
+            var policlinicList = _databaseContext.Policlinics.ToList();
 
             // View'e verileri gönder
             if (policlinicList != null)
@@ -49,7 +49,7 @@ namespace Hospital_reservation_system.Controllers
                 }
 
                 //userId kontrolü
-                if (_databaseContext.Doctors.Any(x => x.Id == model.id))
+                if (_databaseContext.Doctors.Any(x => x.Id == model.id.ToString()))
                 {
                     ModelState.AddModelError(nameof(model.id), "TC is already exists.");
                     return View(model); // Buraya 'return' ekledik
@@ -72,6 +72,7 @@ namespace Hospital_reservation_system.Controllers
                 }
                 else
                 {
+                    ModelState.AddModelError("", "Doctor be added.");
                     return RedirectToAction("DoktorEkle", "Admin");
                 }
             }

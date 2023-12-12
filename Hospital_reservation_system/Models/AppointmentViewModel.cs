@@ -9,19 +9,18 @@ namespace Hospital_reservation_system.Models
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız!")]
         public string currentUserID { get; set; }
 
-        [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
+        //[Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
         public string selecktedDoctorID { get; set; }
 
         [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
         public string selectedDoctorName { get; set; }
 
         [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
-        public string policlinicName { get; set; }
-
-        [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
-        public string departmentName { get; set; }
+        public int policlinicName { get; set; }
 
         [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
         public DateTime dateTime { get; set; }
+
+        public List<Appointment> Appointments { get; set; }
     }
 }

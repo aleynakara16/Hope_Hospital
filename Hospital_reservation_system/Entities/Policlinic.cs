@@ -8,7 +8,7 @@ namespace Hospital_reservation_system.Entities
     public class Policlinic
     {
         [Key]
-        public String Policlinic_Id { get; set; } 
+        public String Policlinic_Id { get; set; }
 
         [Required]
         public string Policlinic_Name { get; set; }

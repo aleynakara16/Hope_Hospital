@@ -1,8 +1,10 @@
 ﻿using Hospital_reservation_system.Entities;
 using Hospital_reservation_system.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Hospital_reservation_system.Controllers
 {
@@ -21,13 +23,31 @@ namespace Hospital_reservation_system.Controllers
         }
         public IActionResult Create()
         {
-            // Şehir isimlerini alın
-            // var cities = _databaseContext.Hospitals.Select(h => h.City).Distinct().ToList();
-            // ViewBag.Cities = new SelectList(cities);
 
-            // Boş bir AppointmentViewModel oluşturun
-            //var model = new AppointmentViewModel();
+            var selectedDoctorNameList = _databaseContext.Doctors.ToList();
+            var PoliclinicList = _databaseContext.Policlinics.ToList();
+            // Giriş yapmış kullanıcının ID bilgisini al
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
+            // Kullanıcının ID bilgisini view'e gönder
+            ViewBag.UserId = userId;
+
+            // View'e verileri gönder
+            if (selectedDoctorNameList != null)
+            {
+                ViewBag.selectedDoctorNameList = new SelectList(selectedDoctorNameList, "Id", "name", "Policlinic");
+            }
+            if (PoliclinicList != null)
+            {
+                ViewBag.PoliclinicList = new SelectList(PoliclinicList, "Policlinic_Id", "Policlinic_Name");
+            }
+        
+            return View();
+        }
+       
+        [HttpPost]
+        public IActionResult Create(AppointmentViewModel model)
+        {
             return View();
         }
         public IActionResult Delete()
