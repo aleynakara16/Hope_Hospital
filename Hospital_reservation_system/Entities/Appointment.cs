@@ -9,11 +9,11 @@ namespace Hospital_reservation_system.Entities
         [Key]
         public int AppointmentID { get; set; }
 
-        [ForeignKey("ApplicationUser")]
+        [Required]
         public string UserID { get; set; }
 
-        [Required] //Changes V2
-        public int DoctorID { get; set; }
+        [Required] 
+        public string DoctorID { get; set; }
 
         [Required]
         [Display(Name = "Date for Appointment")]
