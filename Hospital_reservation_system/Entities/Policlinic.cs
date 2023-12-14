@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
+
 
 namespace Hospital_reservation_system.Entities
 {
@@ -8,10 +10,12 @@ namespace Hospital_reservation_system.Entities
     public class Policlinic
     {
         [Key]
-        public String Policlinic_Id { get; set; }
+        public long Policlinic_Id { get; set; }
 
         [Required]
         public string Policlinic_Name { get; set; }
+        
+        public List<Doctor> Doctors { get; set; }
 
     }
 }

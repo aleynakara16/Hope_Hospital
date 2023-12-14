@@ -9,6 +9,6 @@
     "\\Hospital_reservation_system\\Views",
     "\\Hospital_reservation_system\\Views\\Account"
   ],
-  "SelectedNode": "\\Hospital_reservation_system.sln",
+  "SelectedNode": "\\Hospital_reservation_system\\Entities\\Doctor.cs",
   "PreviewInSolutionExplorer": false
 }

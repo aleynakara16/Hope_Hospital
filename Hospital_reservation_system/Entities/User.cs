@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
+using System;
 
 namespace Hospital_reservation_system.Entities
 {
@@ -8,7 +9,7 @@ namespace Hospital_reservation_system.Entities
     public class User
     {
         [Key]
-        public String Id { get; set; } //benzersin olması için guid kullanıldı
+        public long Id { get; set; } //benzersin olması için guid kullanıldı
 
         [Required]
         [StringLength(30)]
@@ -24,5 +25,8 @@ namespace Hospital_reservation_system.Entities
         [Required]
         [StringLength(50)]
         public string Role { get; set; } = "user";
+
+        public List<Appointment> Appointments { get; set; }
+
     }
 }

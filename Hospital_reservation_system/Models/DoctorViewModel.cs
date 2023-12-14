@@ -24,9 +24,9 @@ namespace Hospital_reservation_system.Models
         [MaxLength(16, ErrorMessage = "Password can be max 16 characters.")]
         [Compare(nameof(Password))]
         public string RePassword { get; set; }
-
+       
         [Required]
-        public String Policlinic { get; set; }
+        public long  PoliclinicId { get; set; }
 
 
 

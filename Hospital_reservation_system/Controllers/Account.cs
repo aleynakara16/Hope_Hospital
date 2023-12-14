@@ -125,7 +125,7 @@ namespace Hospital_reservation_system.Controllers
                     View(model);
                 }
                 //userId kontrolü
-                if (_databaseContext.Users.Any(x => x.Id == model.UserID))
+                if (_databaseContext.Users.Any(x => x.Id.ToString() == model.UserID))
                 {
                     ModelState.AddModelError(nameof(model.UserID), "TC is already exists.");
                     View(model);
@@ -134,7 +134,7 @@ namespace Hospital_reservation_system.Controllers
                 {
                     Username = model.Username,
                     Password = model.Password,
-                    Id=model.UserID
+                    Id=long.Parse(model.UserID)
                 };
 
                 _databaseContext.Users.Add(user);
@@ -170,8 +170,8 @@ namespace Hospital_reservation_system.Controllers
         {
             String userid = new String(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
-            User user = _databaseContext.Users.SingleOrDefault(x => x.Id == userid);
-            Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id == userid);
+            User user = _databaseContext.Users.SingleOrDefault(x => x.Id.ToString() == userid);
+            Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id.ToString() == userid);
                        
             if (User.IsInRole("user"))
             {
@@ -192,8 +192,8 @@ namespace Hospital_reservation_system.Controllers
             if (ModelState.IsValid)
             {
                 String userid = new String(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                User user = _databaseContext.Users.SingleOrDefault(x => x.Id == userid);
-                Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id == userid);
+                User user = _databaseContext.Users.SingleOrDefault(x => x.Id.ToString() == userid);
+                Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id.ToString() == userid);
 
                 if (User.IsInRole("user"))
                 {
@@ -221,8 +221,8 @@ namespace Hospital_reservation_system.Controllers
             if (ModelState.IsValid)
             {
                 String userid = new String(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                User user = _databaseContext.Users.SingleOrDefault(x => x.Id == userid);
-                Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id == userid);
+                User user = _databaseContext.Users.SingleOrDefault(x => x.Id.ToString() == userid);
+                Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id.ToString() == userid);
                 if (User.IsInRole("user"))
                 {
                     user.Password = password;

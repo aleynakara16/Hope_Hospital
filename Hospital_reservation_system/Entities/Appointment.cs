@@ -10,10 +10,12 @@ namespace Hospital_reservation_system.Entities
         public int AppointmentID { get; set; }
 
         [Required]
-        public string UserID { get; set; }
+        public long UserID { get; set; }
+        public User User { get; set; }
 
         [Required] 
-        public string DoctorID { get; set; }
+        public long DoctorID { get; set; }
+        public Doctor Doctor { get; set; }
 
         [Required]
         [Display(Name = "Date for Appointment")]
@@ -28,10 +30,6 @@ namespace Hospital_reservation_system.Entities
         public DateTime Time { get; set; }
 
         public string TimeBlockHelper { get; set; }
-
-        public virtual Doctor Doctor { get; set; }
-
-        public virtual User User { get; set; }
 
         public int CompareTo(Appointment other)
         {

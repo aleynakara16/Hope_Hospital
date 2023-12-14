@@ -37,16 +37,16 @@
                 <span asp-validation-for="RePassword" class="text-danger small"></span>
             </div>
             <div class="form-group mb-3">
-                <label name="Policlinic" asp-for="Policlinic" for="Policlinic">PoliClinic:</label>
-                <select id="Policlinic" name="Policlinic" asp-for="Policlinic" class="form-control">
+                <label name="Policlinic" asp-for="PoliclinicId" for="Policlinic">PoliClinic:</label>
+                <select id="Policlinic" name="PoliclinicId" asp-for="PoliclinicId" class="form-control">
                     @if (ViewBag.PoliclinicList != null)
                     {
                         foreach (var policlinic in ViewBag.PoliclinicList)
                         {
-                            <option value="@policlinic.Text">@policlinic.Text</option>
+                            <option value="@policlinic.Value">@policlinic.Text</option>
                         }
                     }
-            </select>
+                </select>
             </div>
 
 

@@ -49,18 +49,19 @@ namespace Hospital_reservation_system.Controllers
                 }
 
                 //userId kontrolü
-                if (_databaseContext.Doctors.Any(x => x.Id == model.id.ToString()))
+                if (_databaseContext.Doctors.Any(x => x.Id.ToString() == model.id.ToString()))
                 {
                     ModelState.AddModelError(nameof(model.id), "TC is already exists.");
                     return View(model); // Buraya 'return' ekledik
                 }
-
+                // Poliklinik nesnesini bul
+                var policlinic = _databaseContext.Policlinics.Find(model.PoliclinicId);
                 Doctor doktor = new()
                 {
                     name = model.name,
-                    Id = model.id,
+                    Id =long.Parse( model.id),
                     Password = model.Password,
-                    Policlinic = model.Policlinic
+                    Policlinic = policlinic
                 };
 
                 _databaseContext.Doctors.Add(doktor);
@@ -98,7 +99,7 @@ namespace Hospital_reservation_system.Controllers
                     View(model);
                 }
                 //userId kontrolü
-                if (_databaseContext.Admins.Any(x => x.Admin_Id == model.Admin_Id))
+                if (_databaseContext.Admins.Any(x => x.Admin_Id.ToString() == model.Admin_Id))
                 {
                     ModelState.AddModelError(nameof(model.Admin_Id), "TC is already exists.");
                     View(model);
@@ -106,7 +107,7 @@ namespace Hospital_reservation_system.Controllers
                 Entities.Admin user = new()
                 {
                     Admin_mail = model.Admin_mail,
-                    Admin_Id = model.Admin_Id,
+                    Admin_Id =long.Parse(model.Admin_Id),
                     Admin_Password = model.Admin_Password,
 
                 };

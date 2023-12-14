@@ -9,7 +9,7 @@ namespace Hospital_reservation_system.Entities
     public class Admin
     {
         [Key]
-        public String Admin_Id { get; set; } //benzersin olması için guid kullanıldı
+        public long Admin_Id { get; set; } 
 
         [Required]
         [StringLength(30)]

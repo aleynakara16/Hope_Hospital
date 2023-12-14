@@ -24,8 +24,8 @@ namespace Hospital_reservation_system.Migrations
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Admin", b =>
                 {
-                    b.Property<string>("Admin_Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("Admin_Id")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Admin_Password")
                         .IsRequired()
@@ -47,58 +47,46 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Admin_Id");
 
-                    b.ToTable("Admins", (string)null);
+                    b.ToTable("Admins");
                 });
 
-            modelBuilder.Entity("Hospital_reservation_system.Entities.Availability", b =>
+            modelBuilder.Entity("Hospital_reservation_system.Entities.Appointment", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("AppointmentID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AppointmentID"));
 
-                    b.Property<int>("DayOfWeek")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
-                    b.Property<int>("DoctorId")
-                        .HasColumnType("int");
+                    b.Property<long>("DoctorID")
+                        .HasColumnType("bigint");
 
-                    b.Property<string>("DoctorId1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("datetime2");
 
-                    b.Property<TimeSpan>("EndTime")
-                        .HasColumnType("time");
-
-                    b.Property<TimeSpan>("StartTime")
-                        .HasColumnType("time");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DoctorId1");
-
-                    b.ToTable("Availability", (string)null);
-                });
-
-            modelBuilder.Entity("Hospital_reservation_system.Entities.Department", b =>
-                {
-                    b.Property<string>("Department_Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Department_Name")
+                    b.Property<string>("TimeBlockHelper")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Department_Id");
+                    b.Property<long>("UserID")
+                        .HasColumnType("bigint");
 
-                    b.ToTable("Departments", (string)null);
+                    b.HasKey("AppointmentID");
+
+                    b.HasIndex("DoctorID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("Appointment");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Doctor", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -111,9 +99,8 @@ namespace Hospital_reservation_system.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Policlinic")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<long>("PoliclinicID")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Role")
                         .IsRequired()
@@ -127,13 +114,18 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Doctors", (string)null);
+                    b.HasIndex("PoliclinicID");
+
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Policlinic", b =>
                 {
-                    b.Property<string>("Policlinic_Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("Policlinic_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Policlinic_Id"));
 
                     b.Property<string>("Policlinic_Name")
                         .IsRequired()
@@ -141,13 +133,13 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Policlinic_Id");
 
-                    b.ToTable("Policlinics", (string)null);
+                    b.ToTable("Policlinics");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.User", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -172,23 +164,52 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Hospital_reservation_system.Entities.Availability", b =>
+            modelBuilder.Entity("Hospital_reservation_system.Entities.Appointment", b =>
                 {
                     b.HasOne("Hospital_reservation_system.Entities.Doctor", "Doctor")
-                        .WithMany("Availabilities")
-                        .HasForeignKey("DoctorId1")
+                        .WithMany("DoctorAppointmens")
+                        .HasForeignKey("DoctorID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Hospital_reservation_system.Entities.User", "User")
+                        .WithMany("Appointments")
+                        .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Doctor");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Doctor", b =>
                 {
-                    b.Navigation("Availabilities");
+                    b.HasOne("Hospital_reservation_system.Entities.Policlinic", "Policlinic")
+                        .WithMany("Doctors")
+                        .HasForeignKey("PoliclinicID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Policlinic");
+                });
+
+            modelBuilder.Entity("Hospital_reservation_system.Entities.Doctor", b =>
+                {
+                    b.Navigation("DoctorAppointmens");
+                });
+
+            modelBuilder.Entity("Hospital_reservation_system.Entities.Policlinic", b =>
+                {
+                    b.Navigation("Doctors");
+                });
+
+            modelBuilder.Entity("Hospital_reservation_system.Entities.User", b =>
+                {
+                    b.Navigation("Appointments");
                 });
 #pragma warning restore 612, 618
         }
