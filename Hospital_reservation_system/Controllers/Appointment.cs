@@ -23,7 +23,6 @@ namespace Hospital_reservation_system.Controllers
         }
         public IActionResult Create()
         {
-
             var selectedDoctorNameList = _databaseContext.Doctors.ToList();
             var PoliclinicList = _databaseContext.Policlinics.ToList();
             // Giriş yapmış kullanıcının ID bilgisini al
@@ -44,12 +43,36 @@ namespace Hospital_reservation_system.Controllers
         
             return View();
         }
-       
+
         [HttpPost]
         public IActionResult Create(AppointmentViewModel model)
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult GetDoctorsByPoliclinic(long policlinicID)
+        {
+            // Burada veritabanınızdan seçilen poliklinik adına göre doktorları getirin.
+            // Örnek veritabanı sorgusu:
+            var doctors = GetDoctorsByPoliclinicFromDatabase(policlinicID);
+
+            return Json(doctors);
+        }
+
+        // Bu metot, veritabanından seçilen poliklinik adına göre doktorları getirir.
+        private List<string> GetDoctorsByPoliclinicFromDatabase(long policlinicID)
+        {
+            // Burada gerçek veritabanı sorgularınızı yapın ve doktorları getirin.
+            // Örnek olarak sadece string listesi döndürüyorum:
+            // Aşağıdaki kod gerçek bir veritabanı sorgusu olmamakla birlikte, bu adıma uygun bir sorgu yapılmalıdır.
+            var doctors = _databaseContext.Doctors
+                    .Where(d => d.PoliclinicID == policlinicID)
+                    .Select(d => d.name)
+                    .ToList();
+
+            return doctors;
+        }
+
         public IActionResult Delete()
         {
             return View();

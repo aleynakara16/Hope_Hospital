@@ -30,6 +30,7 @@ namespace Hospital_reservation_system.Controllers
             // View'e verileri gönder
             if (policlinicList != null)
             {
+                
                 ViewBag.PoliclinicList = new SelectList(policlinicList, "Policlinic_Id", "Policlinic_Name");
             }
             return View();
@@ -41,17 +42,19 @@ namespace Hospital_reservation_system.Controllers
         {
             if (ModelState.IsValid)
             {
-                //username kontrolü
-                if (_databaseContext.Doctors.Any(x => x.name.ToLower() == model.name.ToLower()))
-                {
-                    ModelState.AddModelError(nameof(model.name), "Username is already exists.");
-                    return View(model); // Buraya 'return' ekledik
-                }
 
                 //userId kontrolü
                 if (_databaseContext.Doctors.Any(x => x.Id.ToString() == model.id.ToString()))
                 {
                     ModelState.AddModelError(nameof(model.id), "TC is already exists.");
+                    var policlinicList = _databaseContext.Policlinics.ToList();
+
+                    // View'e verileri gönder
+                    if (policlinicList != null)
+                    {
+
+                        ViewBag.PoliclinicList = new SelectList(policlinicList, "Policlinic_Id", "Policlinic_Name");
+                    }
                     return View(model); // Buraya 'return' ekledik
                 }
                 // Poliklinik nesnesini bul
@@ -77,6 +80,7 @@ namespace Hospital_reservation_system.Controllers
                     return RedirectToAction("DoktorEkle", "Admin");
                 }
             }
+
             return View(model);
         }
 

@@ -68,9 +68,9 @@
                                             <div class="form-group">
                                                 <label name="policlinicName" asp-for="policlinicName" for="policlinicName">Poliklinik:</label>
                                                 <select id="policlinicName" name="policlinicName" asp-for="policlinicName" class="form-control" onchange="getDoctors()">
-                                                    @foreach (var policlinic in ViewBag.PoliclinicList)
+                                                    @foreach (var policlinic in ViewBag.policlinicList)
                                                     {
-                                                        <option value="@policlinic.Text">@policlinic.Text</option>
+                                                        <option value="@policlinic.Value">@policlinic.Text</option>
                                                     }
                                                 </select>
                                             </div>
@@ -79,19 +79,19 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label name="selectedDoctorName" asp-for="selectedDoctorName" for="selectedDoctorName">Doktor:</label>
-                                                <select id="selectedDoctorName" name="selectedDoctorName" asp-for="selectedDoctorName" class="form-control">
-                                                    @foreach (var selectedDoctorName in ViewBag.selectedDoctorNameList)
-                                                    {
-                                                        <option value="@selectedDoctorName.Text">@selectedDoctorName.Text</option>
-                                                    }
-                                                </select>
+                                                <label asp-for="dateTime" class="control-label"></label>
+                                                <input id="dateTime" type="datetime-local" datetime-local"" name="dateTime" class="form-control" required="required">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label asp-for="dateTime" class="control-label"></label>
-                                                <input id="form_email" type="datetime-local" datetime-local"" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                                <label name="selectedDoctorName" asp-for="selectedDoctorName" for="selectedDoctorName">Doktor:</label>
+                                                <select id="selectedDoctorName" name="selectedDoctorName" asp-for="selectedDoctorName" class="form-control">
+                                                    @foreach (var selectedDoctorName in ViewBag.selectedDoctorNameList)
+                                                    {
+                                                        <option value="@selectedDoctorName.Value">@selectedDoctorName.Text</option>
+                                                    }
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -103,6 +103,35 @@
             </div>
         </div>
     </div>
+    <script>
+        function getDoctors() {
+            var selectedPoliclinicId = document.getElementById("policlinicName").value;
 
-</body>
+            // AJAX isteği ile sunucuya seçilen poliklinik ID'yi gönderin
+            // ve dönen doktorları kullanarak sayfayı güncelleyin.
+            $.ajax({
+                type: "POST",
+                url: "/Appointment/GetDoctorsByPoliclinic",
+                data: { policlinicID: selectedPoliclinicId },
+                success: function (data) {
+                    // Başarılı cevap geldiğinde, doktorları seçim kutusuna ekleyin.
+                    var doctorSelect = document.getElementById("selectedDoctorName");
+                    doctorSelect.innerHTML = "";
+
+                    for (var i = 0; i < data.length; i++) {
+                        var option = document.createElement("option");
+                        option.text = data[i];
+                        option.value = data[i];
+                        doctorSelect.add(option);
+                    }
+                },
+                error: function (error) {
+                    console.error("Hata oluştu: ", error);
+                }
+            });
+        }
+    </script>
+    <</body>>
+
+
 </html>

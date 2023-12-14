@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Doktor Ekle";
+    var PoliclinicList = ViewBag.PoliclinicList;
 }
 
 
@@ -41,7 +42,7 @@
                 <select id="Policlinic" name="PoliclinicId" asp-for="PoliclinicId" class="form-control">
                     @if (ViewBag.PoliclinicList != null)
                     {
-                        foreach (var policlinic in ViewBag.PoliclinicList)
+                        foreach (var policlinic in PoliclinicList)
                         {
                             <option value="@policlinic.Value">@policlinic.Text</option>
                         }
