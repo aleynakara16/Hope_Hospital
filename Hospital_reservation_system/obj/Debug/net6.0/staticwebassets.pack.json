@@ -17,8 +17,36 @@
       "PackagePath": "staticwebassets\\images\\3160.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\icons\\favicon.ico",
+      "PackagePath": "staticwebassets\\images\\icons\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\img-01.png",
+      "PackagePath": "staticwebassets\\images\\img-01.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\indir.png",
+      "PackagePath": "staticwebassets\\images\\indir.png"
+    },
+    {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\lib\\bootstrap-timepicker\\css\\bootstrap-timepicker.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-timepicker\\css\\bootstrap-timepicker.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\lib\\bootstrap-timepicker\\css\\bootstrap-timepicker.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-timepicker\\css\\bootstrap-timepicker.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\lib\\bootstrap-timepicker\\js\\bootstrap-timepicker.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-timepicker\\js\\bootstrap-timepicker.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\lib\\bootstrap-timepicker\\js\\bootstrap-timepicker.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-timepicker\\js\\bootstrap-timepicker.min.js"
     },
     {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\lib\\bootstrap\\LICENSE",

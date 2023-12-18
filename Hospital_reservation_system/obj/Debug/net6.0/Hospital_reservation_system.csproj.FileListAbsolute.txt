@@ -1189,3 +1189,4 @@ C:\Users\user\OneDrive\Masaüstü\Hope_Hospital-main\Hospital_reservation_system
 C:\Users\user\OneDrive\Masaüstü\Hope_Hospital-main\Hospital_reservation_system\obj\Debug\net6.0\Hospital_reservation_system.pdb
 C:\Users\user\OneDrive\Masaüstü\Hope_Hospital-main\Hospital_reservation_system\obj\Debug\net6.0\Hospital_reservation_system.genruntimeconfig.cache
 C:\Users\user\OneDrive\Masaüstü\Hope_Hospital-main\Hospital_reservation_system\obj\Debug\net6.0\ref\Hospital_reservation_system.dll
+C:\Users\user\OneDrive\Belgeler\GitHub\Hospital_Reservation_System\Hospital_reservation_system\bin\Debug\net6.0\libman.json

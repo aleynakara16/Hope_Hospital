@@ -79,28 +79,27 @@ namespace Hospital_reservation_system.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Appointment",
+                name: "Appointments",
                 columns: table => new
                 {
-                    AppointmentID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AppointmentID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserID = table.Column<long>(type: "bigint", nullable: false),
                     DoctorID = table.Column<long>(type: "bigint", nullable: false),
+                    Policlinicname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Time = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TimeBlockHelper = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Time = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Appointment", x => x.AppointmentID);
+                    table.PrimaryKey("PK_Appointments", x => x.AppointmentID);
                     table.ForeignKey(
-                        name: "FK_Appointment_Doctors_DoctorID",
+                        name: "FK_Appointments_Doctors_DoctorID",
                         column: x => x.DoctorID,
                         principalTable: "Doctors",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Appointment_Users_UserID",
+                        name: "FK_Appointments_Users_UserID",
                         column: x => x.UserID,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -108,13 +107,13 @@ namespace Hospital_reservation_system.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Appointment_DoctorID",
-                table: "Appointment",
+                name: "IX_Appointments_DoctorID",
+                table: "Appointments",
                 column: "DoctorID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Appointment_UserID",
-                table: "Appointment",
+                name: "IX_Appointments_UserID",
+                table: "Appointments",
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
@@ -130,7 +129,7 @@ namespace Hospital_reservation_system.Migrations
                 name: "Admins");
 
             migrationBuilder.DropTable(
-                name: "Appointment");
+                name: "Appointments");
 
             migrationBuilder.DropTable(
                 name: "Doctors");

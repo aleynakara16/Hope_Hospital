@@ -50,9 +50,8 @@
                     <div class="card-body bg-light">
 
                         <div class="container">
-                            <form id="contact-form" role="form">
+                            <form id="contact-form" asp-action="Create" asp-controller="Appointment" method="post">
                                 <div class="controls">
-
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="col-md-6">
@@ -64,13 +63,32 @@
                                             </div>
 
                                         </div>
+
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label name="policlinicName" asp-for="policlinicName" for="policlinicName">Poliklinik:</label>
-                                                <select id="policlinicName" name="policlinicName" asp-for="policlinicName" class="form-control" onchange="getDoctors()">
+                                                <label name="policlinicID" asp-for="policlinicID" for="policlinicID">Poliklinik:</label>
+                                                <select id="policlinicID" name="policlinicID" asp-for="policlinicID" class="form-control" onchange="getDoctors()">
+                                                    <option value="">Seçiniz...</option>
+
                                                     @foreach (var policlinic in ViewBag.policlinicList)
                                                     {
                                                         <option value="@policlinic.Value">@policlinic.Text</option>
+                                                    }
+                                                </select>
+                                                <span asp-validation-for="policlinicID" class="text-danger small"></span>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label name="selecktedDoctorID" asp-for="selecktedDoctorID" for="selecktedDoctorID">Doktor:</label>
+                                                <select name="selecktedDoctorID" asp-for="selecktedDoctorID" id="selecktedDoctorID" class="form-control">
+                                                    <option value="">Seçiniz...</option>
+                                                    @foreach (var selecktedDoctorID in ViewBag.selectedDoctorNameList)
+                                                    {
+                                                        <option value="@selecktedDoctorID.Value">@selecktedDoctorID.Text</option>
                                                     }
                                                 </select>
                                             </div>
@@ -79,21 +97,24 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label asp-for="dateTime" class="control-label"></label>
-                                                <input id="dateTime" type="datetime-local" datetime-local"" name="dateTime" class="form-control" required="required">
+                                                <label asp-for="Date"></label>
+                                                <input asp-for="Date" type="date" class="form-control" />
+                                                <span asp-validation-for="Date" class="text-danger"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label name="selectedDoctorName" asp-for="selectedDoctorName" for="selectedDoctorName">Doktor:</label>
-                                                <select id="selectedDoctorName" name="selectedDoctorName" asp-for="selectedDoctorName" class="form-control">
-                                                    @foreach (var selectedDoctorName in ViewBag.selectedDoctorNameList)
-                                                    {
-                                                        <option value="@selectedDoctorName.Value">@selectedDoctorName.Text</option>
-                                                    }
-                                                </select>
+                                                <label asp-for="Time"></label>
+                                                <input asp-for="Time" type="time" class="form-control" />
+                                                <span asp-validation-for="Time" class="text-danger"></span>
                                             </div>
                                         </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="form-group d-grid mb-3">
+                                        <button type="submit" class="btn btn-primary d-block mt-4"><i class="fa-solid fa-paper-plane me-2"></i>Kaydet</button>
                                     </div>
                                 </div>
                             </form>
@@ -105,7 +126,7 @@
     </div>
     <script>
         function getDoctors() {
-            var selectedPoliclinicId = document.getElementById("policlinicName").value;
+            var selectedPoliclinicId = document.getElementById("policlinicID").value;
 
             // AJAX isteği ile sunucuya seçilen poliklinik ID'yi gönderin
             // ve dönen doktorları kullanarak sayfayı güncelleyin.
@@ -115,7 +136,7 @@
                 data: { policlinicID: selectedPoliclinicId },
                 success: function (data) {
                     // Başarılı cevap geldiğinde, doktorları seçim kutusuna ekleyin.
-                    var doctorSelect = document.getElementById("selectedDoctorName");
+                    var doctorSelect = document.getElementById("selecktedDoctorID");
                     doctorSelect.innerHTML = "";
 
                     for (var i = 0; i < data.length; i++) {
@@ -131,7 +152,9 @@
             });
         }
     </script>
-    <</body>>
+</body>
 
 
 </html>
+
+

@@ -26,7 +26,7 @@ namespace Hospital_reservation_system.Entities
         [StringLength(50)]
         public string Role { get; set; } = "user";
 
-        public List<Appointment> Appointments { get; set; }
+        public List<Appointments> AppointmentList { get; set; }
 
     }
 }

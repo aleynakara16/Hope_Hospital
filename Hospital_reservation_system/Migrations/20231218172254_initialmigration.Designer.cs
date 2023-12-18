@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hospital_reservation_system.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231214121111_initialmigration")]
+    [Migration("20231218172254_initialmigration")]
     partial class initialmigration
     {
         /// <inheritdoc />
@@ -53,13 +53,11 @@ namespace Hospital_reservation_system.Migrations
                     b.ToTable("Admins");
                 });
 
-            modelBuilder.Entity("Hospital_reservation_system.Entities.Appointment", b =>
+            modelBuilder.Entity("Hospital_reservation_system.Entities.Appointments", b =>
                 {
-                    b.Property<int>("AppointmentID")
+                    b.Property<Guid>("AppointmentID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AppointmentID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
@@ -67,12 +65,12 @@ namespace Hospital_reservation_system.Migrations
                     b.Property<long>("DoctorID")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("Time")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("TimeBlockHelper")
+                    b.Property<string>("Policlinicname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("datetime2");
 
                     b.Property<long>("UserID")
                         .HasColumnType("bigint");
@@ -83,7 +81,7 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Appointment");
+                    b.ToTable("Appointments");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Doctor", b =>
@@ -170,7 +168,7 @@ namespace Hospital_reservation_system.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Hospital_reservation_system.Entities.Appointment", b =>
+            modelBuilder.Entity("Hospital_reservation_system.Entities.Appointments", b =>
                 {
                     b.HasOne("Hospital_reservation_system.Entities.Doctor", "Doctor")
                         .WithMany("DoctorAppointmens")
@@ -179,7 +177,7 @@ namespace Hospital_reservation_system.Migrations
                         .IsRequired();
 
                     b.HasOne("Hospital_reservation_system.Entities.User", "User")
-                        .WithMany("Appointments")
+                        .WithMany("AppointmentList")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -212,7 +210,7 @@ namespace Hospital_reservation_system.Migrations
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.User", b =>
                 {
-                    b.Navigation("Appointments");
+                    b.Navigation("AppointmentList");
                 });
 #pragma warning restore 612, 618
         }

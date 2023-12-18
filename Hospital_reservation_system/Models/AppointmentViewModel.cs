@@ -1,4 +1,6 @@
 ﻿using Hospital_reservation_system.Entities;
+using Hospital_reservation_system.validations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,20 +9,24 @@ namespace Hospital_reservation_system.Models
     public class AppointmentViewModel
     {
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız!")]
-        public string currentUserID { get; set; }
+        public long currentUserID { get; set; }
 
-        //[Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
+        [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
         public string selecktedDoctorID { get; set; }
 
         [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
-        public string selectedDoctorName { get; set; }
+        public int policlinicID { get; set; }
 
-        [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
-        public int policlinicName { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage = "Please enter a valid date.")]
+        [FutureDate(ErrorMessage = "Please select a future date.")]
+        public DateTime Date { get; set; }
 
-        [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
-        public DateTime dateTime { get; set; }
+        [DataType(DataType.Time)]
+        [Required(ErrorMessage = "Please enter a valid time.")]
+        public DateTime Time { get; set; }
 
-        public List<Appointment> Appointments { get; set; }
+       // public List<Appointments> Appointments { get; set; }
     }
 }
