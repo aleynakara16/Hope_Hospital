@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hospital_reservation_system.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231218172254_initialmigration")]
+    [Migration("20231219104617_initialmigration")]
     partial class initialmigration
     {
         /// <inheritdoc />
@@ -62,8 +62,9 @@ namespace Hospital_reservation_system.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("DoctorID")
-                        .HasColumnType("bigint");
+                    b.Property<string>("DoctorID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Policlinicname")
                         .IsRequired()
@@ -72,8 +73,9 @@ namespace Hospital_reservation_system.Migrations
                     b.Property<DateTime>("Time")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("UserID")
-                        .HasColumnType("bigint");
+                    b.Property<string>("UserID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("AppointmentID");
 
@@ -86,8 +88,8 @@ namespace Hospital_reservation_system.Migrations
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Doctor", b =>
                 {
-                    b.Property<long>("Id")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -139,8 +141,8 @@ namespace Hospital_reservation_system.Migrations
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.User", b =>
                 {
-                    b.Property<long>("Id")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");

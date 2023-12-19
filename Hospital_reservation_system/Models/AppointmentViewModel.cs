@@ -9,10 +9,10 @@ namespace Hospital_reservation_system.Models
     public class AppointmentViewModel
     {
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız!")]
-        public long currentUserID { get; set; }
+        public String currentUserID { get; set; }
 
         [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
-        public string selecktedDoctorID { get; set; }
+        public String selecktedDoctorID { get; set; }
 
         [Required(ErrorMessage = "Bu Alanı Boş Bırakamazsınız!")]
         public int policlinicID { get; set; }

@@ -42,9 +42,7 @@ namespace Hospital_reservation_system.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                //userId kontrolü
-                if (_databaseContext.Doctors.Any(x => x.Id.ToString() == model.id.ToString()))
+                if (_databaseContext.Doctors.Any(x => x.Id == model.id))
                 {
                     ModelState.AddModelError(nameof(model.id), "TC is already exists.");
                     var policlinicList = _databaseContext.Policlinics.ToList();
@@ -62,7 +60,7 @@ namespace Hospital_reservation_system.Controllers
                 Doctor doktor = new()
                 {
                     name = model.name,
-                    Id =long.Parse( model.id),
+                    Id =model.id,
                     Password = model.Password,
                     Policlinic = policlinic
                 };

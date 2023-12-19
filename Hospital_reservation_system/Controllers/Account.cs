@@ -125,7 +125,7 @@ namespace Hospital_reservation_system.Controllers
                     View(model);
                 }
                 //userId kontrolü
-                if (_databaseContext.Users.Any(x => x.Id.ToString() == model.UserID))
+                if (_databaseContext.Users.Any(x => x.Id == model.UserID))
                 {
                     ModelState.AddModelError(nameof(model.UserID), "TC is already exists.");
                     View(model);
@@ -134,7 +134,7 @@ namespace Hospital_reservation_system.Controllers
                 {
                     Username = model.Username,
                     Password = model.Password,
-                    Id=long.Parse(model.UserID)
+                    Id=model.UserID
                 };
 
                 _databaseContext.Users.Add(user);

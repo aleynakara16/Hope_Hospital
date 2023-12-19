@@ -86,9 +86,9 @@
                                                 <label name="selecktedDoctorID" asp-for="selecktedDoctorID" for="selecktedDoctorID">Doktor:</label>
                                                 <select name="selecktedDoctorID" asp-for="selecktedDoctorID" id="selecktedDoctorID" class="form-control">
                                                     <option value="">Seçiniz...</option>
-                                                    @foreach (var selecktedDoctorID in ViewBag.selectedDoctorNameList)
+                                                    @foreach (var doctor in ViewBag.selectedDoctorNameList)
                                                     {
-                                                        <option value="@selecktedDoctorID.Value">@selecktedDoctorID.Text</option>
+                                                        <option value="@doctor.Value">@doctor.Text</option>
                                                     }
                                                 </select>
                                             </div>
@@ -141,8 +141,8 @@
 
                     for (var i = 0; i < data.length; i++) {
                         var option = document.createElement("option");
-                        option.text = data[i];
-                        option.value = data[i];
+                        option.text = data[i].name; // Kullanıcıya gösterilen değer name, value değeri ise Id olacak
+                        option.value = data[i].id; // Burada value'a doktorun ID'sini atmalısınız.
                         doctorSelect.add(option);
                     }
                 },

@@ -23,20 +23,7 @@ namespace Hospital_reservation_system.Controllers
         }
         public IActionResult Create()
         {
-            var selectedDoctorNameList = _databaseContext.Doctors.ToList();
-            var PoliclinicList = _databaseContext.Policlinics.ToList();
-            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;// Giriş yapmış kullanıcının ID bilgisini al
-            ViewBag.UserId = userId; // Kullanıcının ID bilgisini view'e gönder
-
-            // View'e verileri gönder
-            if (selectedDoctorNameList != null)
-            {
-                ViewBag.selectedDoctorNameList = new SelectList(selectedDoctorNameList, "Id", "name", "Policlinic");
-            }
-            if (PoliclinicList != null)
-            {
-                ViewBag.PoliclinicList = new SelectList(PoliclinicList, "Policlinic_Id", "Policlinic_Name");
-            }
+            PopliclicDropdowns(); // Dropdown listelerini dolduran yardımcı metod
 
             return View();
         }
@@ -46,16 +33,16 @@ namespace Hospital_reservation_system.Controllers
         {
             if (ModelState.IsValid)
             {
-                var doctor = _databaseContext.Doctors.Find(model.selecktedDoctorID);//sORUN BURADA
+                var doctor = _databaseContext.Doctors.Find(model.selecktedDoctorID);
                 var user = _databaseContext.Users.Find(model.currentUserID);
 
                 Appointments new_appointment = new()
                 {
-                   User=user,
-                   Doctor=doctor,
-                   Date=model.Date,
-                   Time=model.Time,
-
+                    User = user,
+                    Doctor = doctor,
+                    Date = model.Date,
+                    Time = model.Time,
+                    Policlinicname = model.policlinicID.ToString()
                 };
 
                 _databaseContext.Appointments.Add(new_appointment);
@@ -63,30 +50,38 @@ namespace Hospital_reservation_system.Controllers
 
                 if (affectedRowCount == 0)
                 {
-                    ModelState.AddModelError("", "User can not be added.");
+                    ModelState.AddModelError("", "Appointment can not be added.");
                 }
                 else
                 {
                     return RedirectToAction(nameof(Details));
                 }
             }
+
+            PopliclicDropdowns(); // Dropdown listelerini dolduran yardımcı metod
+
+            return View(model);
+        }
+
+        private void PopliclicDropdowns()
+        {
             var selectedDoctorNameList = _databaseContext.Doctors.ToList();
             var PoliclinicList = _databaseContext.Policlinics.ToList();
-            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;// Giriş yapmış kullanıcının ID bilgisini al
-            ViewBag.UserId = userId; // Kullanıcının ID bilgisini view'e gönder
+
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            ViewBag.UserId = userId;
 
             // View'e verileri gönder
             if (selectedDoctorNameList != null)
             {
-                ViewBag.selectedDoctorNameList = new SelectList(selectedDoctorNameList, "Id", "name", "Policlinic");
+                ViewBag.selectedDoctorNameList = new SelectList(selectedDoctorNameList, "Id", "name");
             }
             if (PoliclinicList != null)
             {
                 ViewBag.PoliclinicList = new SelectList(PoliclinicList, "Policlinic_Id", "Policlinic_Name");
             }
-
-            return View(model);
         }
+
 
         [HttpPost]
         public IActionResult GetDoctorsByPoliclinic(long policlinicID)
@@ -99,19 +94,15 @@ namespace Hospital_reservation_system.Controllers
         }
 
         // Bu metot, veritabanından seçilen poliklinik adına göre doktorları getirir.
-        private List<string> GetDoctorsByPoliclinicFromDatabase(long policlinicID)
+        private List<Doctor> GetDoctorsByPoliclinicFromDatabase(long policlinicID)
         {
-            // Burada gerçek veritabanı sorgularınızı yapın ve doktorları getirin.
-            // Örnek olarak sadece string listesi döndürüyorum:
-            // Aşağıdaki kod gerçek bir veritabanı sorgusu olmamakla birlikte, bu adıma uygun bir sorgu yapılmalıdır.
+            
             var doctors = _databaseContext.Doctors
                     .Where(d => d.PoliclinicID == policlinicID)
-                    .Select(d => d.name)
                     .ToList();
 
             return doctors;
         }
-
         public IActionResult Delete()
         {
             return View();
@@ -123,22 +114,6 @@ namespace Hospital_reservation_system.Controllers
         }
         private void ShowAppointment()
         {
-            String userid = new String(User.FindFirstValue(ClaimTypes.NameIdentifier));
-
-            User user = _databaseContext.Users.SingleOrDefault(x => x.Id.ToString() == userid);
-            Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id.ToString() == userid);
-
-            if (User.IsInRole("user"))
-            {
-                ViewData["Username"] = user.Username;
-                ViewData["Doctorname"] = doctor.name;
-
-            }
-            else if (User.IsInRole("doctor"))
-            {
-                ViewData["Username"] = doctor.name;
-
-            }
         }
 
 

@@ -10,11 +10,11 @@ namespace Hospital_reservation_system.Entities
         public Guid AppointmentID { get; set; }
 
         [Required]
-        public long UserID { get; set; }
+        public String UserID { get; set; }
         public User User { get; set; }
 
         [Required] 
-        public long DoctorID { get; set; }
+        public String DoctorID { get; set; }
         public Doctor Doctor { get; set; }
 
         public string Policlinicname { get; set; }

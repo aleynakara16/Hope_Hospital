@@ -43,7 +43,7 @@ namespace Hospital_reservation_system.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Username = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Locked = table.Column<bool>(type: "bit", nullable: false),
@@ -59,7 +59,7 @@ namespace Hospital_reservation_system.Migrations
                 name: "Doctors",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Locked = table.Column<bool>(type: "bit", nullable: false),
@@ -83,8 +83,8 @@ namespace Hospital_reservation_system.Migrations
                 columns: table => new
                 {
                     AppointmentID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserID = table.Column<long>(type: "bigint", nullable: false),
-                    DoctorID = table.Column<long>(type: "bigint", nullable: false),
+                    UserID = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    DoctorID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Policlinicname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Time = table.Column<DateTime>(type: "datetime2", nullable: false)
