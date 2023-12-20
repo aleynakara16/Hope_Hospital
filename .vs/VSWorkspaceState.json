@@ -7,6 +7,6 @@
     "\\Hospital_reservation_system\\Views",
     "\\Hospital_reservation_system\\Views\\Appointment"
   ],
-  "SelectedNode": "\\Hospital_reservation_system\\Controllers\\Account.cs",
+  "SelectedNode": "\\Hospital_reservation_system\\Entities\\Appointments.cs",
   "PreviewInSolutionExplorer": false
 }

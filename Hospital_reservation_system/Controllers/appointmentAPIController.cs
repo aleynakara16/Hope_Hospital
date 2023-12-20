@@ -21,5 +21,7 @@ namespace Hospital_reservation_system.Controllers
             var policlinics = _databaseContext.Policlinics.ToList();
             return Ok(policlinics);
         }
+
+       
     }
 }

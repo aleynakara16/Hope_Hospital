@@ -170,7 +170,7 @@ namespace Hospital_reservation_system.Controllers
         {
             String userid = new String(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
-            User user = _databaseContext.Users.SingleOrDefault(x => x.Id.ToString() == userid);
+            User user = _databaseContext.Users.SingleOrDefault(x => x.Id == userid);
             Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id.ToString() == userid);
                        
             if (User.IsInRole("user"))

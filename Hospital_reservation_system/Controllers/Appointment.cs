@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Security.Claims;
 
 namespace Hospital_reservation_system.Controllers
@@ -17,10 +18,40 @@ namespace Hospital_reservation_system.Controllers
             _databaseContext = databaseContext;
         }
 
-        public IActionResult Index()
+
+        public async Task< IActionResult> Index()
         {
+            List<Appointments> appointmentsList = _databaseContext.Appointments.ToList(); 
+
+            // Convert Appointments to AppointmentViewModel
+            IEnumerable < AppointmentViewModel > appointmentViewModels = appointmentsList.Select(appointment => new AppointmentViewModel
+                {
+                    currentUserID = appointment.UserID,
+                    selecktedDoctorID = appointment.DoctorID,
+                    Date = appointment.Date,
+                    Time = appointment.Time
+                });
+
+            return View(appointmentViewModels);
+        }
+
+        public IActionResult Details()
+        {
+
             return View();
         }
+
+
+
+
+
+
+
+
+
+
+
+
         public IActionResult Create()
         {
             PopliclicDropdowns(); // Dropdown listelerini dolduran yardımcı metod
@@ -54,7 +85,7 @@ namespace Hospital_reservation_system.Controllers
                 }
                 else
                 {
-                    return RedirectToAction(nameof(Details));
+                    return RedirectToAction(nameof(Index));
                 }
             }
 
@@ -62,7 +93,6 @@ namespace Hospital_reservation_system.Controllers
 
             return View(model);
         }
-
         private void PopliclicDropdowns()
         {
             var selectedDoctorNameList = _databaseContext.Doctors.ToList();
@@ -81,7 +111,6 @@ namespace Hospital_reservation_system.Controllers
                 ViewBag.PoliclinicList = new SelectList(PoliclinicList, "Policlinic_Id", "Policlinic_Name");
             }
         }
-
 
         [HttpPost]
         public IActionResult GetDoctorsByPoliclinic(long policlinicID)
@@ -107,15 +136,8 @@ namespace Hospital_reservation_system.Controllers
         {
             return View();
         }
-        public IActionResult Details()
-        {
-            ShowAppointment();
-            return View();
-        }
-        private void ShowAppointment()
-        {
-        }
-
-
+       
+       
+       
     }
 }
