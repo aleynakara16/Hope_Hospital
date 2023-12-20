@@ -63,7 +63,7 @@ namespace Hospital_reservation_system.Controllers
                 {//login işleri burada yapılacak
                     if (doctor.Locked)
                     {
-                        ModelState.AddModelError(nameof(doctor.name), "User is locked.");
+                        ModelState.AddModelError(nameof(doctor.name), "doctor is locked.");
                         return View(model);
                     }
                     //cookşes de tutacaklarımızı belirleyelim

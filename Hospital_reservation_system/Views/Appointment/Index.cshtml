@@ -9,7 +9,6 @@
 
 <table class="table">
     <thead>
-    <th>ID</th>
     <th>User ID</th>
     <th>Selected Doctor ID</th>
     <th>Policlinic ID</th>
@@ -20,8 +19,12 @@
         @foreach (var AppointmentViewModel in Model)
         {
             <tr>
+                <td>@AppointmentViewModel.currentUserID</td>
                 <td>@AppointmentViewModel.selecktedDoctorID</td>
-                
+                <td>@AppointmentViewModel.policlinicID</td>
+                <td>@AppointmentViewModel.Date</td>
+                <td>@AppointmentViewModel.Time</td>
+
             
             </tr>
         }

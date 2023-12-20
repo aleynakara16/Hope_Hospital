@@ -1,46 +1,81 @@
 ﻿@model RegisterViewModel
-@{
-    ViewData["Title"] = "Sign In";
-}
+<html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
+    <link href="~/fonts/login/icomoon/style.css" rel="stylesheet" />
 
-<div class="row">
-    <div class="col-4 offset-4">
-        <h1 class="display-4 border-bottom text-center pb-2">@ViewData["Title"]</h1>
+    <link href="~/css/login/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link href="~/css/login/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Kayıt ol</title>
+</head>
+<body>
+
+    <div class="content mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="~/images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-md-6 contents">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="mb-4">
+                                <h3>Kaydol</h3>
+                            </div>
+                            <form method="post" asp-controller="Account" asp-action="Register">
+                                <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+
+                                <div class="form-group first">
+                                    <label for="username" asp-for="Username" class="form-label">Username</label>
+                                    <input type="text" asp-for="Username" class="form-control" id="username">
+                                    <span asp-validation-for="Username" class="text-danger small"></span>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="UserID" asp-for="UserID" class="form-label">UserID</label>
+                                    <input type="text" asp-for="UserID" class="form-control" id="UserID">
+                                    <span asp-validation-for="UserID" class="text-danger small"></span>
+
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="RePassword" asp-for="RePassword" class="form-label">RePassword</label>
+                                    <input type="password" asp-for="RePassword" class="form-control" id="RePassword">
+                                    <span asp-validation-for="RePassword" class="text-danger small"></span>
+
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="password" asp-for="Password" class="form-label">Password</label>
+                                    <input type="password" asp-for="Password" class="form-control" id="password">
+                                    <span asp-validation-for="Password" class="text-danger small"></span>
+
+                                </div>
+
+                                <input type="submit" value="Giriş Yap" class="btn btn-block btn-primary">
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-4 offset-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
 
-            <div class="form-group mb-3">
-                <label asp-for="UserID" class="form-label">TC</label>
-                <input asp-for="UserID" class="form-control" placeholder="Tc..." />
-                <span asp-validation-for="UserID" class="text-danger small"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="Username" class="form-label">UserName</label>
-                <input asp-for="Username" class="form-control" placeholder="name.." />
-                <span asp-validation-for="Username" class="text-danger small"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="Password" class="form-label">Password</label>
-                <input asp-for="Password" type="password" class="form-control" placeholder="PassWord!" />
-                <span asp-validation-for="Password" class="text-danger small"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="RePassword" class="form-label">Re-Password</label>
-                <input asp-for="RePassword" type="password" class="form-control" placeholder="PassWord" />
-                <span asp-validation-for="RePassword" class="text-danger small"></span>
-            </div>
-
-            <div class="form-group d-grid mb-3">
-                <button type="submit" class="btn btn-primary d-block"><i class="fa-solid fa-paper-plane me-2"></i>Kaydol</button>
-            </div>
-        </form>
-    </div>
-</div>
+    <script src="~/js/login/jquery-3.3.1.min.js"></script>
+    <script src="~/js/login/popper.min.js"></script>
+    <script src="~/js/login/bootstrap.min.js"></script>
+    <script src="~/js/login/main.js"></script>
+</body>
+</html>
