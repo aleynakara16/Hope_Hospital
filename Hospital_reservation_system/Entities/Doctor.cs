@@ -30,7 +30,7 @@ namespace Hospital_reservation_system.Entities
         [Required]
         public long PoliclinicID { get; set; }
         public Policlinic Policlinic { get; set; }
-
+        public string PoliclincName { get; set; }
 
         public List<Appointments> DoctorAppointmens { get; set; }
     }

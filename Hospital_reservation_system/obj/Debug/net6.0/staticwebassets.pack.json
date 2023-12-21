@@ -33,6 +33,46 @@
       "PackagePath": "staticwebassets\\css\\Login\\style.css"
     },
     {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\css\\Tablo\\.DS_Store",
+      "PackagePath": "staticwebassets\\css\\Tablo\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\css\\Tablo\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\Tablo\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\css\\Tablo\\bootstrap\\.DS_Store",
+      "PackagePath": "staticwebassets\\css\\Tablo\\bootstrap\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\css\\Tablo\\bootstrap\\_media.css",
+      "PackagePath": "staticwebassets\\css\\Tablo\\bootstrap\\_media.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\css\\Tablo\\bootstrap\\mixins\\.DS_Store",
+      "PackagePath": "staticwebassets\\css\\Tablo\\bootstrap\\mixins\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\css\\Tablo\\bootstrap\\mixins\\_border-radius.css",
+      "PackagePath": "staticwebassets\\css\\Tablo\\bootstrap\\mixins\\_border-radius.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\css\\Tablo\\bootstrap\\mixins\\_screen-reader.css",
+      "PackagePath": "staticwebassets\\css\\Tablo\\bootstrap\\mixins\\_screen-reader.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\css\\Tablo\\bootstrap\\mixins\\_visibility.css",
+      "PackagePath": "staticwebassets\\css\\Tablo\\bootstrap\\mixins\\_visibility.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\css\\Tablo\\bootstrap\\utilities\\_stretched-link.css",
+      "PackagePath": "staticwebassets\\css\\Tablo\\bootstrap\\utilities\\_stretched-link.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\css\\Tablo\\style.css",
+      "PackagePath": "staticwebassets\\css\\Tablo\\style.css"
+    },
+    {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.css"
     },
@@ -449,6 +489,10 @@
       "PackagePath": "staticwebassets\\images\\d3.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\doctorlogo.jpg",
+      "PackagePath": "staticwebassets\\images\\doctorlogo.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\feature.jpg",
       "PackagePath": "staticwebassets\\images\\feature.jpg"
     },
@@ -499,6 +543,22 @@
     {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\js\\Login\\popper.min.js",
       "PackagePath": "staticwebassets\\js\\Login\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\js\\Tablo\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\Tablo\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\js\\Tablo\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\Tablo\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\js\\Tablo\\main.js",
+      "PackagePath": "staticwebassets\\js\\Tablo\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\js\\Tablo\\popper.js",
+      "PackagePath": "staticwebassets\\js\\Tablo\\popper.js"
     },
     {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\js\\bootstrap.js",
@@ -763,6 +823,374 @@
     {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\.DS_Store",
       "PackagePath": "staticwebassets\\scss\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\.DS_Store",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\.DS_Store",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_alert.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_alert.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_badge.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_breadcrumb.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_button-group.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_button-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_buttons.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_card.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_card.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_carousel.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_carousel.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_close.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_close.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_code.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_code.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_custom-forms.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_custom-forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_dropdown.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_forms.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_functions.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_functions.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_grid.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_images.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_images.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_input-group.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_input-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_jumbotron.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_jumbotron.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_list-group.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_list-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_media.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_media.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_mixins.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_modal.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_nav.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_nav.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_navbar.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_pagination.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_popover.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_popover.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_print.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_print.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_progress.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_progress.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_reboot.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_reboot.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_root.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_root.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_spinners.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_spinners.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_tables.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_tables.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_toasts.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_toasts.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_tooltip.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_transitions.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_transitions.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_type.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_type.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\_variables.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\bootstrap.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_background-variant.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_background-variant.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_badge.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_float.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_float.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_grid-framework.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_grid-framework.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_hover.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_hover.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_image.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_nav-divider.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_nav-divider.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_screen-reader.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_size.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_size.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_table-row.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_table-row.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_text-emphasis.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_text-emphasis.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_text-hide.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_text-hide.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\mixins\\_visibility.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\mixins\\_visibility.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_align.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_align.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_background.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_background.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_borders.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_borders.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_clearfix.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_display.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_display.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_embed.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_embed.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_flex.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_flex.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_float.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_float.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_overflow.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_overflow.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_position.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_position.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_screenreaders.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_screenreaders.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_shadows.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_shadows.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_sizing.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_sizing.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_spacing.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_spacing.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_stretched-link.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_text.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_text.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\utilities\\_visibility.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\utilities\\_visibility.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\bootstrap\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\bootstrap\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\Tablo\\style.scss",
+      "PackagePath": "staticwebassets\\scss\\Tablo\\style.scss"
     },
     {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\scss\\bootstrap\\_alert.scss",

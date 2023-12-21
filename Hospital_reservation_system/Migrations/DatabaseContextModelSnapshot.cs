@@ -99,6 +99,10 @@ namespace Hospital_reservation_system.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("PoliclincName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<long>("PoliclinicID")
                         .HasColumnType("bigint");
 

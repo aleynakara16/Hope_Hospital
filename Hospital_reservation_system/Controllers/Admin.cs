@@ -16,10 +16,23 @@ namespace Hospital_reservation_system.Controllers
         {
             _databaseContext = databaseContext;
         }
-       
         public IActionResult Index()
         {
             return View();
+        }
+        public async Task<IActionResult> Create()
+        {
+            List<Doctor> DoctorList = _databaseContext.Doctors.ToList();
+
+            // Convert Appointments to AppointmentViewModel
+            IEnumerable<DoctorViewModel> DoctorViewModels = DoctorList.Select(doctor => new DoctorViewModel
+            {
+                id = doctor.Id,
+                name = doctor.name,
+                PoliclinicId = doctor.PoliclinicID,
+            });
+
+            return View(DoctorViewModels);
         }
 
         [AllowAnonymous]
@@ -62,7 +75,8 @@ namespace Hospital_reservation_system.Controllers
                     name = model.name,
                     Id =model.id,
                     Password = model.Password,
-                    Policlinic = policlinic
+                    Policlinic = policlinic,
+                    PoliclinicID=model.PoliclinicId
                 };
 
                 _databaseContext.Doctors.Add(doktor);
@@ -130,5 +144,21 @@ namespace Hospital_reservation_system.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
+        public IActionResult DoktorListele()
+        {
+			List<Doctor> doctorsList = _databaseContext.Doctors.ToList();
+
+			// Convert Appointments to AppointmentViewModel
+			IEnumerable<DoctorViewModel> doctorViewModels = doctorsList.Select(doctor => new DoctorViewModel
+			{
+				id = doctor.Id,
+				name = doctor.name,
+				PoliclinicId = doctor.PoliclinicID
+
+			});
+
+			return View(doctorViewModels);
+		}
     }
 }
