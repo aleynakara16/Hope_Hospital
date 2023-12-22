@@ -32,6 +32,7 @@ namespace Hospital_reservation_system.Entities
         public Policlinic Policlinic { get; set; }
         public string PoliclincName { get; set; }
 
-        public List<Appointments> DoctorAppointmens { get; set; }
+
+		public List<Appointments> DoctorAppointmens { get; set; }
     }
 }

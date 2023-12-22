@@ -43,12 +43,12 @@ namespace Hospital_reservation_system.Controllers
             // View'e verileri gönder
             if (policlinicList != null)
             {
-                
+
                 ViewBag.PoliclinicList = new SelectList(policlinicList, "Policlinic_Id", "Policlinic_Name");
             }
             return View();
         }
-        
+
         [AllowAnonymous]
         [HttpPost]
         public IActionResult DoktorEkle(DoctorViewModel model)
@@ -73,10 +73,10 @@ namespace Hospital_reservation_system.Controllers
                 Doctor doktor = new()
                 {
                     name = model.name,
-                    Id =model.id,
+                    Id = model.id,
                     Password = model.Password,
                     Policlinic = policlinic,
-                    PoliclinicID=model.PoliclinicId
+                    PoliclinicID = model.PoliclinicId
                 };
 
                 _databaseContext.Doctors.Add(doktor);
@@ -95,8 +95,21 @@ namespace Hospital_reservation_system.Controllers
 
             return View(model);
         }
+		
+        public IActionResult DoktorSil(string Id)
+        {
+			Doctor doctor = _databaseContext.Doctors.Find(Id);
 
-        [AllowAnonymous]
+			if (doctor != null)
+			{
+				_databaseContext.Doctors.Remove(doctor);
+				_databaseContext.SaveChanges();
+			}
+
+			return RedirectToAction(nameof(DoktorListele));
+
+		}
+		[AllowAnonymous]
         public IActionResult AdminEkle()
         {
             return View();
@@ -123,7 +136,7 @@ namespace Hospital_reservation_system.Controllers
                 Entities.Admin user = new()
                 {
                     Admin_mail = model.Admin_mail,
-                    Admin_Id =long.Parse(model.Admin_Id),
+                    Admin_Id = long.Parse(model.Admin_Id),
                     Admin_Password = model.Admin_Password,
 
                 };
@@ -147,18 +160,19 @@ namespace Hospital_reservation_system.Controllers
         [AllowAnonymous]
         public IActionResult DoktorListele()
         {
-			List<Doctor> doctorsList = _databaseContext.Doctors.ToList();
+            List<Doctor> doctorsList = _databaseContext.Doctors.ToList();
 
-			// Convert Appointments to AppointmentViewModel
-			IEnumerable<DoctorViewModel> doctorViewModels = doctorsList.Select(doctor => new DoctorViewModel
-			{
-				id = doctor.Id,
-				name = doctor.name,
-				PoliclinicId = doctor.PoliclinicID
+            // Convert Appointments to AppointmentViewModel
+            IEnumerable<DoctorViewModel> doctorViewModels = doctorsList.Select(doctor => new DoctorViewModel
+            {
+                id = doctor.Id,
+                name = doctor.name,
+                PoliclinicId = doctor.PoliclinicID
 
-			});
+            });
 
-			return View(doctorViewModels);
-		}
+            return View(doctorViewModels);
+        }
+   
     }
 }

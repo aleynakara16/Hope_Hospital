@@ -34,18 +34,18 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach (var DoctorViewModel in Model)
+								@foreach (DoctorViewModel doctor in Model)
 								{
 									<tr class="alert" role="alert">
-										<td>@DoctorViewModel.id</td>
-										<td>@DoctorViewModel.name</td>
-										<td>@DoctorViewModel.PoliclinicId</td>
+										<td>@doctor.id</td>
+										<td>@doctor.name</td>
+										<td>@doctor.PoliclinicId</td>
 										@if (User.Identity.IsAuthenticated)
 										{
 											if (User.IsInRole("admin"))
 											{
 												<td>
-													<a href="#" class="close" data-dismiss="alert" aria-label="Close">
+													<a  asp-controller="Admin" asp-action="DoktorSil" asp-route-id="@doctor.id">
 														<span aria-hidden="true"><i class="fa fa-close"></i></span>
 													</a>
 												</td>

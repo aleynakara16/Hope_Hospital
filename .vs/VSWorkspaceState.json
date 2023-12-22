@@ -3,11 +3,12 @@
     "",
     "\\Hospital_reservation_system",
     "\\Hospital_reservation_system\\Controllers",
-    "\\Hospital_reservation_system\\Entities",
     "\\Hospital_reservation_system\\Views",
+    "\\Hospital_reservation_system\\Views\\Admin",
     "\\Hospital_reservation_system\\Views\\Appointment",
-    "\\Hospital_reservation_system\\Views\\Home"
+    "\\Hospital_reservation_system\\Views\\Home",
+    "\\Hospital_reservation_system\\Views\\Shared"
   ],
-  "SelectedNode": "\\Hospital_reservation_system\\Views\\Home\\Index.cshtml",
+  "SelectedNode": "\\Hospital_reservation_system\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

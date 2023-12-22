@@ -26,7 +26,7 @@ namespace Hospital_reservation_system.Models
         public string RePassword { get; set; }
 
         [Required(ErrorMessage = "PoliclinicId is required.")]
-        public long  PoliclinicId { get; set; }
+        public long PoliclinicId { get; set; }
         public string PoliclinicName { get; set; }
 
 

@@ -469,6 +469,10 @@
       "PackagePath": "staticwebassets\\images\\about-img.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\arslan.jpg",
+      "PackagePath": "staticwebassets\\images\\arslan.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\carousel-1.jpg",
       "PackagePath": "staticwebassets\\images\\carousel-1.jpg"
     },
@@ -489,8 +493,20 @@
       "PackagePath": "staticwebassets\\images\\d3.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\doctor-man.png",
+      "PackagePath": "staticwebassets\\images\\doctor-man.png"
+    },
+    {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\doctorlogo.jpg",
       "PackagePath": "staticwebassets\\images\\doctorlogo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\doktorlar arslan vesikalık - Google Arama.mhtml",
+      "PackagePath": "staticwebassets\\images\\doktorlar arslan vesikalık - Google Arama.mhtml"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\ela.jpg",
+      "PackagePath": "staticwebassets\\images\\ela.jpg"
     },
     {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\feature.jpg",
@@ -503,6 +519,10 @@
     {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\icons\\favicon.ico",
       "PackagePath": "staticwebassets\\images\\icons\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\levent.jpg",
+      "PackagePath": "staticwebassets\\images\\levent.jpg"
     },
     {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\s2.png",
