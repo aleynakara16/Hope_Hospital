@@ -36,22 +36,6 @@ namespace Hospital_reservation_system.Controllers
             return View(appointmentViewModels);
         }
 
-        public IActionResult Details()
-        {
-
-            return View();
-        }
-
-
-
-
-
-
-
-
-
-
-
 
         public IActionResult Create()
         {
@@ -65,28 +49,36 @@ namespace Hospital_reservation_system.Controllers
         {
             if (ModelState.IsValid)
             {
-                var doctor = _databaseContext.Doctors.Find(model.selecktedDoctorID);
-                var user = _databaseContext.Users.Find(model.currentUserID);
-
-                Appointments new_appointment = new()
+                if (IsRandevuAvailable(model.selecktedDoctorID, model.Date + model.Time.TimeOfDay))
                 {
-                    User = user,
-                    Doctor = doctor,
-                    Date = model.Date,
-                    Time = model.Time,
-                    Policlinicname = model.policlinicID.ToString()
-                };
+                    var doctor = _databaseContext.Doctors.Find(model.selecktedDoctorID);
+                    var user = _databaseContext.Users.Find(model.currentUserID);
 
-                _databaseContext.Appointments.Add(new_appointment);
-                int affectedRowCount = _databaseContext.SaveChanges();
+                    Appointments new_appointment = new()
+                    {
+                        User = user,
+                        Doctor = doctor,
+                        Date = model.Date,
+                        Time = model.Time,
+                        Policlinicname = model.policlinicID.ToString()
+                    };
 
-                if (affectedRowCount == 0)
-                {
-                    ModelState.AddModelError("", "Appointment can not be added.");
+                    _databaseContext.Appointments.Add(new_appointment);
+                    int affectedRowCount = _databaseContext.SaveChanges();
+
+                    if (affectedRowCount == 0)
+                    {
+                        ModelState.AddModelError("", "Appointment can not be added.");
+                    }
+                    else
+                    {
+                        return RedirectToAction(nameof(Index));
+                    }
                 }
                 else
                 {
-                    return RedirectToAction(nameof(Index));
+                    ModelState.AddModelError("", "Seçtiğiniz tarihte doktorun randevusu var");
+
                 }
             }
 
@@ -133,12 +125,15 @@ namespace Hospital_reservation_system.Controllers
 
             return doctors;
         }
-        public IActionResult Delete()
+
+        public bool IsRandevuAvailable(string doktorId, DateTime randevuTarihi)
         {
-            return View();
+            // Belirtilen doktorun aynı gün aynı saatte başka bir randevusu var mı kontrol et
+            bool isAvailable = !_databaseContext.Appointments
+                .Any(r => r.DoctorID == doktorId && r.Date == randevuTarihi.Date && r.Time.TimeOfDay == randevuTarihi.TimeOfDay);
+
+            return isAvailable;
         }
-
-
 
     }
 }

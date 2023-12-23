@@ -20,22 +20,7 @@ namespace Hospital_reservation_system.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> Create()
-        {
-            List<Doctor> DoctorList = _databaseContext.Doctors.ToList();
 
-            // Convert Appointments to AppointmentViewModel
-            IEnumerable<DoctorViewModel> DoctorViewModels = DoctorList.Select(doctor => new DoctorViewModel
-            {
-                id = doctor.Id,
-                name = doctor.name,
-                PoliclinicId = doctor.PoliclinicID.ToString(),
-            });
-
-            return View(DoctorViewModels);
-        }
-
-        [AllowAnonymous]
         public IActionResult DoktorEkle()
         {
             var policlinicList = _databaseContext.Policlinics.ToList();
@@ -49,7 +34,6 @@ namespace Hospital_reservation_system.Controllers
             return View();
         }
 
-        [AllowAnonymous]
         [HttpPost]
         public IActionResult DoktorEkle(DoctorViewModel model)
         {
@@ -108,13 +92,11 @@ namespace Hospital_reservation_system.Controllers
             return RedirectToAction(nameof(DoktorListele));
 
         }
-        [AllowAnonymous]
         public IActionResult AdminEkle()
         {
             return View();
         }
 
-        [AllowAnonymous]
         [HttpPost]
         public IActionResult AdminEkle(AdminViewModel model)
         {

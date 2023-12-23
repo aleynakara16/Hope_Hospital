@@ -99,7 +99,7 @@ namespace Hospital_reservation_system.Controllers
 				}
 				else
 				{
-					ModelState.AddModelError("", "Username or password is incorrect. o hata ");
+					ModelState.AddModelError("", "Username or password is incorrect.");
 				}
 			}
 

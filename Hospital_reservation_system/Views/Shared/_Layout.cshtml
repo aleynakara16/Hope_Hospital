@@ -14,7 +14,23 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow " style="background-color: #1c2331;">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("admin"))
+                    {
+                        <a class="navbar-brand" asp-area="" asp-controller="Admin" asp-action="Index">Anasayfa</a>
+                    }
+                    else
+                    {
+                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+
+                    }
+                }
+                else
+                {
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+
+                }
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

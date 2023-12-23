@@ -51,6 +51,7 @@
 
                         <div class="container">
                             <form id="contact-form" asp-action="Create" asp-controller="Appointment" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
                                 <div class="controls">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -105,7 +106,21 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label asp-for="Time"></label>
-                                                <input asp-for="Time" type="time" class="form-control" />
+                                                <select asp-for="Time" class="form-control">
+                                                    <option value="">Select Time</option>
+                                                    @{
+                                                        // Başlangıç ve bitiş zamanını belirle
+                                                        DateTime startTime = DateTime.Parse("09:00");
+                                                        DateTime endTime = DateTime.Parse("17:00");
+
+                                                        // 30 dakika aralıklarında option elementleri oluştur
+                                                        while (startTime <= endTime)
+                                                        {
+                                                            <option value="@startTime.ToString("HH:mm")">@startTime.ToString("hh:mm tt")</option>
+                                                            startTime = startTime.AddMinutes(30);
+                                                        }
+                                                    }
+                                                </select> 
                                                 <span asp-validation-for="Time" class="text-danger"></span>
                                             </div>
                                         </div>
