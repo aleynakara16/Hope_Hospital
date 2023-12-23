@@ -19,6 +19,15 @@ namespace Hospital_reservation_system.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Admin>().HasData(
+               new Admin
+               {
+                   Admin_mail ="b211210004@sakarya.edu.tr",
+                   Admin_Id = long.Parse("16043326656"),
+                   Admin_Password = "sau",
+               }
+         );
+
             // Doctor ve Appointment arasında One-to-Many ilişkisi
             modelBuilder.Entity<Doctor>()
                 .HasMany(d => d.DoctorAppointmens)

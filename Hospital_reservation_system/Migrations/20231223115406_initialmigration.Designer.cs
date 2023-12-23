@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hospital_reservation_system.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231221093618_doktordatabasegüncelleme")]
-    partial class doktordatabasegüncelleme
+    [Migration("20231223115406_initialmigration")]
+    partial class initialmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,6 +51,16 @@ namespace Hospital_reservation_system.Migrations
                     b.HasKey("Admin_Id");
 
                     b.ToTable("Admins");
+
+                    b.HasData(
+                        new
+                        {
+                            Admin_Id = 16043326656L,
+                            Admin_Password = "sau",
+                            Admin_mail = "b211210004@sakarya.edu.tr",
+                            CreatedAt = new DateTime(2023, 12, 23, 14, 54, 6, 371, DateTimeKind.Local).AddTicks(8614),
+                            Role = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Appointments", b =>
@@ -102,12 +112,9 @@ namespace Hospital_reservation_system.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("PoliclincName")
+                    b.Property<string>("PoliclinicID")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("PoliclinicID")
-                        .HasColumnType("bigint");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Role")
                         .IsRequired()
@@ -128,11 +135,8 @@ namespace Hospital_reservation_system.Migrations
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Policlinic", b =>
                 {
-                    b.Property<long>("Policlinic_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Policlinic_Id"));
+                    b.Property<string>("Policlinic_Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Policlinic_Name")
                         .IsRequired()

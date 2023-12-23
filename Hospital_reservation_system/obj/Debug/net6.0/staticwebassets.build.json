@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jr5qOtENqgO/3bj9WBQyIjARC2pINIMJA9PvO59ET50=",
+  "Hash": "QmXJWmh7AfaocJVurbs//PHYUtGZctzJrbYTov5rYY0=",
   "Source": "Hospital_reservation_system",
   "BasePath": "_content/Hospital_reservation_system",
   "Mode": "Default",
@@ -1989,6 +1989,23 @@
       "OriginalItemSpec": "wwwroot\\images\\3160.jpg"
     },
     {
+      "Identity": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\aa.jpg",
+      "SourceId": "Hospital_reservation_system",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\",
+      "BasePath": "_content/Hospital_reservation_system",
+      "RelativePath": "images/aa.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\aa.jpg"
+    },
+    {
       "Identity": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\about-2.jpg",
       "SourceId": "Hospital_reservation_system",
       "SourceType": "Discovered",
@@ -2159,23 +2176,6 @@
       "OriginalItemSpec": "wwwroot\\images\\doctor-man.png"
     },
     {
-      "Identity": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\doktorlar arslan vesikalık - Google Arama.mhtml",
-      "SourceId": "Hospital_reservation_system",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\",
-      "BasePath": "_content/Hospital_reservation_system",
-      "RelativePath": "images/doktorlar arslan vesikalık - Google Arama.mhtml",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\doktorlar arslan vesikalık - Google Arama.mhtml"
-    },
-    {
       "Identity": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\ela.jpg",
       "SourceId": "Hospital_reservation_system",
       "SourceType": "Discovered",
@@ -2293,40 +2293,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\s4.png"
-    },
-    {
-      "Identity": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\t2.jpg",
-      "SourceId": "Hospital_reservation_system",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\",
-      "BasePath": "_content/Hospital_reservation_system",
-      "RelativePath": "images/t2.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\t2.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\t4.jpg",
-      "SourceId": "Hospital_reservation_system",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\",
-      "BasePath": "_content/Hospital_reservation_system",
-      "RelativePath": "images/t4.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\t4.jpg"
     },
     {
       "Identity": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\undraw_remotely_2j6y.svg",

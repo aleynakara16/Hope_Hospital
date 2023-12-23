@@ -19,18 +19,19 @@ namespace Hospital_reservation_system.Controllers
         }
 
 
-        public async Task< IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
-            List<Appointments> appointmentsList = _databaseContext.Appointments.ToList(); 
+            List<Appointments> appointmentsList = _databaseContext.Appointments.ToList();
 
             // Convert Appointments to AppointmentViewModel
-            IEnumerable < AppointmentViewModel > appointmentViewModels = appointmentsList.Select(appointment => new AppointmentViewModel
-                {
-                    currentUserID = appointment.UserID,
-                    selecktedDoctorID = appointment.DoctorID,
-                    Date = appointment.Date,
-                    Time = appointment.Time
-                });
+            IEnumerable<AppointmentViewModel> appointmentViewModels = appointmentsList.Select(appointment => new AppointmentViewModel
+            {
+                currentUserID = appointment.UserID,
+                selecktedDoctorID = appointment.DoctorID,
+                policlinicID=appointment.Policlinicname,
+                Date = appointment.Date,
+                Time = appointment.Time
+            });
 
             return View(appointmentViewModels);
         }
@@ -113,7 +114,7 @@ namespace Hospital_reservation_system.Controllers
         }
 
         [HttpPost]
-        public IActionResult GetDoctorsByPoliclinic(long policlinicID)
+        public IActionResult GetDoctorsByPoliclinic(string policlinicID)
         {
             // Burada veritabanınızdan seçilen poliklinik adına göre doktorları getirin.
             // Örnek veritabanı sorgusu:
@@ -123,9 +124,9 @@ namespace Hospital_reservation_system.Controllers
         }
 
         // Bu metot, veritabanından seçilen poliklinik adına göre doktorları getirir.
-        private List<Doctor> GetDoctorsByPoliclinicFromDatabase(long policlinicID)
+        private List<Doctor> GetDoctorsByPoliclinicFromDatabase(string policlinicID)
         {
-            
+
             var doctors = _databaseContext.Doctors
                     .Where(d => d.PoliclinicID == policlinicID)
                     .ToList();
@@ -136,8 +137,8 @@ namespace Hospital_reservation_system.Controllers
         {
             return View();
         }
-       
-       
-       
+
+
+
     }
 }

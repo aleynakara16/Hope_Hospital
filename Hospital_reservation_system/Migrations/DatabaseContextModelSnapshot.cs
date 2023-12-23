@@ -47,7 +47,17 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Admin_Id");
 
-                    b.ToTable("Admins", (string)null);
+                    b.ToTable("Admins");
+
+                    b.HasData(
+                        new
+                        {
+                            Admin_Id = 16043326656L,
+                            Admin_Password = "sau",
+                            Admin_mail = "b211210004@sakarya.edu.tr",
+                            CreatedAt = new DateTime(2023, 12, 23, 14, 54, 6, 371, DateTimeKind.Local).AddTicks(8614),
+                            Role = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Appointments", b =>
@@ -80,7 +90,7 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Appointments", (string)null);
+                    b.ToTable("Appointments");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Doctor", b =>
@@ -99,12 +109,9 @@ namespace Hospital_reservation_system.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("PoliclincName")
+                    b.Property<string>("PoliclinicID")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("PoliclinicID")
-                        .HasColumnType("bigint");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Role")
                         .IsRequired()
@@ -120,16 +127,13 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasIndex("PoliclinicID");
 
-                    b.ToTable("Doctors", (string)null);
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Policlinic", b =>
                 {
-                    b.Property<long>("Policlinic_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Policlinic_Id"));
+                    b.Property<string>("Policlinic_Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Policlinic_Name")
                         .IsRequired()
@@ -137,7 +141,7 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Policlinic_Id");
 
-                    b.ToTable("Policlinics", (string)null);
+                    b.ToTable("Policlinics");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.User", b =>
@@ -168,7 +172,7 @@ namespace Hospital_reservation_system.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Hospital_reservation_system.Entities.Appointments", b =>

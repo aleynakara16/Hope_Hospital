@@ -13,7 +13,7 @@ namespace Hospital_reservation_system.Entities
         public String UserID { get; set; }
         public User User { get; set; }
 
-        [Required] 
+        [Required]
         public String DoctorID { get; set; }
         public Doctor Doctor { get; set; }
 

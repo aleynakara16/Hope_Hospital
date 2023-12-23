@@ -29,7 +29,7 @@ namespace Hospital_reservation_system.Controllers
             {
                 id = doctor.Id,
                 name = doctor.name,
-                PoliclinicId = doctor.PoliclinicID,
+                PoliclinicId = doctor.PoliclinicID.ToString(),
             });
 
             return View(DoctorViewModels);
@@ -76,7 +76,6 @@ namespace Hospital_reservation_system.Controllers
                     Id = model.id,
                     Password = model.Password,
                     Policlinic = policlinic,
-                    PoliclinicID = model.PoliclinicId
                 };
 
                 _databaseContext.Doctors.Add(doktor);
@@ -95,21 +94,21 @@ namespace Hospital_reservation_system.Controllers
 
             return View(model);
         }
-		
+
         public IActionResult DoktorSil(string Id)
         {
-			Doctor doctor = _databaseContext.Doctors.Find(Id);
+            Doctor doctor = _databaseContext.Doctors.Find(Id);
 
-			if (doctor != null)
-			{
-				_databaseContext.Doctors.Remove(doctor);
-				_databaseContext.SaveChanges();
-			}
+            if (doctor != null)
+            {
+                _databaseContext.Doctors.Remove(doctor);
+                _databaseContext.SaveChanges();
+            }
 
-			return RedirectToAction(nameof(DoktorListele));
+            return RedirectToAction(nameof(DoktorListele));
 
-		}
-		[AllowAnonymous]
+        }
+        [AllowAnonymous]
         public IActionResult AdminEkle()
         {
             return View();
@@ -167,12 +166,12 @@ namespace Hospital_reservation_system.Controllers
             {
                 id = doctor.Id,
                 name = doctor.name,
-                PoliclinicId = doctor.PoliclinicID
+                PoliclinicId = doctor.PoliclinicID.ToString()
 
             });
 
             return View(doctorViewModels);
         }
-   
+
     }
 }

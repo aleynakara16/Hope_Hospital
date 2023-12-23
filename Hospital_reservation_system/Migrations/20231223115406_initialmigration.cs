@@ -30,8 +30,7 @@ namespace Hospital_reservation_system.Migrations
                 name: "Policlinics",
                 columns: table => new
                 {
-                    Policlinic_Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Policlinic_Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Policlinic_Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -65,7 +64,7 @@ namespace Hospital_reservation_system.Migrations
                     Locked = table.Column<bool>(type: "bit", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Role = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    PoliclinicID = table.Column<long>(type: "bigint", nullable: false)
+                    PoliclinicID = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -105,6 +104,11 @@ namespace Hospital_reservation_system.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Admins",
+                columns: new[] { "Admin_Id", "Admin_Password", "Admin_mail", "CreatedAt", "Role" },
+                values: new object[] { 16043326656L, "sau", "b211210004@sakarya.edu.tr", new DateTime(2023, 12, 23, 14, 54, 6, 371, DateTimeKind.Local).AddTicks(8614), "admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Appointments_DoctorID",

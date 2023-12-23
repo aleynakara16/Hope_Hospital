@@ -10,11 +10,11 @@ namespace Hospital_reservation_system.Entities
     public class Policlinic
     {
         [Key]
-        public long Policlinic_Id { get; set; }
+        public string Policlinic_Id { get; set; }
 
         [Required]
         public string Policlinic_Name { get; set; }
-        
+
         public List<Doctor> Doctors { get; set; }
 
     }

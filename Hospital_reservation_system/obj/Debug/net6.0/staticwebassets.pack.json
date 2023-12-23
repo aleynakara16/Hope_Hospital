@@ -461,6 +461,10 @@
       "PackagePath": "staticwebassets\\images\\3160.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\aa.jpg",
+      "PackagePath": "staticwebassets\\images\\aa.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\about-2.jpg",
       "PackagePath": "staticwebassets\\images\\about-2.jpg"
     },
@@ -501,10 +505,6 @@
       "PackagePath": "staticwebassets\\images\\doctorlogo.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\doktorlar arslan vesikalık - Google Arama.mhtml",
-      "PackagePath": "staticwebassets\\images\\doktorlar arslan vesikalık - Google Arama.mhtml"
-    },
-    {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\ela.jpg",
       "PackagePath": "staticwebassets\\images\\ela.jpg"
     },
@@ -531,14 +531,6 @@
     {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\s4.png",
       "PackagePath": "staticwebassets\\images\\s4.png"
-    },
-    {
-      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\t2.jpg",
-      "PackagePath": "staticwebassets\\images\\t2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\t4.jpg",
-      "PackagePath": "staticwebassets\\images\\t4.jpg"
     },
     {
       "Id": "C:\\Users\\user\\OneDrive\\Belgeler\\GitHub\\Hospital_Reservation_System\\Hospital_reservation_system\\wwwroot\\images\\undraw_remotely_2j6y.svg",

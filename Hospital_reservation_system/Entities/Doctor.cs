@@ -26,13 +26,12 @@ namespace Hospital_reservation_system.Entities
         [Required]
         [StringLength(50)]
         public string Role { get; set; } = "doctor";
-       
+
         [Required]
-        public long PoliclinicID { get; set; }
+        public string PoliclinicID { get; set; }
         public Policlinic Policlinic { get; set; }
-        public string PoliclincName { get; set; }
 
 
-		public List<Appointments> DoctorAppointmens { get; set; }
+        public List<Appointments> DoctorAppointmens { get; set; }
     }
 }
