@@ -55,7 +55,7 @@ namespace Hospital_reservation_system.Migrations
                             Admin_Id = 16043326656L,
                             Admin_Password = "sau",
                             Admin_mail = "b211210004@sakarya.edu.tr",
-                            CreatedAt = new DateTime(2023, 12, 23, 14, 54, 6, 371, DateTimeKind.Local).AddTicks(8614),
+                            CreatedAt = new DateTime(2023, 12, 24, 14, 0, 9, 92, DateTimeKind.Local).AddTicks(4330),
                             Role = "admin"
                         });
                 });

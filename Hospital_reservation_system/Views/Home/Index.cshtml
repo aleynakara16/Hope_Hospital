@@ -141,13 +141,13 @@
                                                 }
                                                 else if (User.IsInRole("doctor"))
                                                 {
-                                                    <a asp-controller="Appointment" asp-action="" class="btn1">
+                                                    <a asp-controller="Appointment" asp-action="Doktorappointment" class="btn1">
                                                         RANDEVULARIM
                                                     </a>
                                                 }
                                                 else if (User.IsInRole("admin"))
                                                 {
-                                                    <a asp-controller="" asp-action="" class="btn1">
+                                                    <a asp-controller="Appointment" asp-action="Index" class="btn1">
                                                         RANDEVULAR
                                                     </a>
                                                 }

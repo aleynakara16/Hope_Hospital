@@ -17,7 +17,7 @@ namespace Hospital_reservation_system.Entities
         public String DoctorID { get; set; }
         public Doctor Doctor { get; set; }
 
-        public string Policlinicname { get; set; }
+		public string Policlinicname { get; set; }
 
         [Required]
         [DataType(DataType.Date)]

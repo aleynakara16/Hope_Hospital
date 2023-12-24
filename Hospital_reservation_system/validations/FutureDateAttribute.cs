@@ -15,7 +15,7 @@ namespace Hospital_reservation_system.validations
             public void AddValidation(ClientModelValidationContext context)
             {
                 context.Attributes.Add("data-val", "true");
-                context.Attributes.Add("data-val-futuredate", "Please select a future date.");
+                context.Attributes.Add("data-val-futuredate","Lütfen gelecek bir tarih seçiniz.");
             }
         
 

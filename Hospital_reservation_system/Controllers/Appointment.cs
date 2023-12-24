@@ -1,5 +1,6 @@
 ﻿using Hospital_reservation_system.Entities;
 using Hospital_reservation_system.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,7 +10,7 @@ using System.Security.Claims;
 
 namespace Hospital_reservation_system.Controllers
 {
-    public class Appointment : Controller
+	public class Appointment : Controller
     {
         private readonly DatabaseContext _databaseContext;
 
@@ -17,34 +18,15 @@ namespace Hospital_reservation_system.Controllers
         {
             _databaseContext = databaseContext;
         }
-
-
-        public async Task<IActionResult> Index()
-        {
-            List<Appointments> appointmentsList = _databaseContext.Appointments.ToList();
-
-            // Convert Appointments to AppointmentViewModel
-            IEnumerable<AppointmentViewModel> appointmentViewModels = appointmentsList.Select(appointment => new AppointmentViewModel
-            {
-                currentUserID = appointment.UserID,
-                selecktedDoctorID = appointment.DoctorID,
-                policlinicID=appointment.Policlinicname,
-                Date = appointment.Date,
-                Time = appointment.Time
-            });
-
-            return View(appointmentViewModels);
-        }
-
-
-        public IActionResult Create()
+        //randevu listeleme
+		public IActionResult Create()
         {
             PopliclicDropdowns(); // Dropdown listelerini dolduran yardımcı metod
 
             return View();
         }
-
-        [HttpPost]
+	
+		[HttpPost]
         public IActionResult Create(AppointmentViewModel model)
         {
             if (ModelState.IsValid)
@@ -72,8 +54,27 @@ namespace Hospital_reservation_system.Controllers
                     }
                     else
                     {
-                        return RedirectToAction(nameof(Index));
-                    }
+						String userid = new String(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+						User kullanici = _databaseContext.Users.SingleOrDefault(x => x.Id == userid);
+						Doctor doktor = _databaseContext.Doctors.SingleOrDefault(x => x.Id == userid);
+
+						if (kullanici != null && doktor == null)
+						{
+							return RedirectToAction(nameof(Userappointment));
+
+						}
+						else if (doktor != null && kullanici == null)
+						{
+							return RedirectToAction(nameof(Doktorappointment));
+						}
+						else
+						{   // admin ise
+							return RedirectToAction(nameof(Index));
+
+
+						}
+					}
                 }
                 else
                 {
@@ -104,7 +105,6 @@ namespace Hospital_reservation_system.Controllers
                 ViewBag.PoliclinicList = new SelectList(PoliclinicList, "Policlinic_Id", "Policlinic_Name");
             }
         }
-
         [HttpPost]
         public IActionResult GetDoctorsByPoliclinic(string policlinicID)
         {
@@ -114,7 +114,6 @@ namespace Hospital_reservation_system.Controllers
 
             return Json(doctors);
         }
-
         // Bu metot, veritabanından seçilen poliklinik adına göre doktorları getirir.
         private List<Doctor> GetDoctorsByPoliclinicFromDatabase(string policlinicID)
         {
@@ -125,7 +124,6 @@ namespace Hospital_reservation_system.Controllers
 
             return doctors;
         }
-
         public bool IsRandevuAvailable(string doktorId, DateTime randevuTarihi)
         {
             // Belirtilen doktorun aynı gün aynı saatte başka bir randevusu var mı kontrol et
@@ -135,5 +133,105 @@ namespace Hospital_reservation_system.Controllers
             return isAvailable;
         }
 
+        // Admin-tüm randevuları listele
+        public async Task<IActionResult> Index()
+        {
+            List<Appointments> appointmentsList = _databaseContext.Appointments.ToList();
+
+            // Convert Appointments to AppointmentViewModel
+            IEnumerable<AppointmentViewModel> appointmentViewModels = appointmentsList.Select(appointment => new AppointmentViewModel
+            {
+                appointment_id=appointment.AppointmentID,
+                currentUserID = appointment.UserID,
+                selecktedDoctorID = appointment.DoctorID,
+                policlinicID = appointment.Policlinicname,
+                Date = appointment.Date,
+                Time = appointment.Time
+            });
+
+            return View(appointmentViewModels);
+        }
+
+        //doktorun randevularını listele
+        public async Task<IActionResult> Doktorappointment()
+        {
+            string docotrId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            List<Appointments> appointmentsList = _databaseContext.Appointments
+        .Where(a => a.DoctorID == docotrId)
+        .ToList();
+            // Convert Appointments to AppointmentViewModel
+            IEnumerable<AppointmentViewModel> appointmentViewModels = appointmentsList.Select(appointment => new AppointmentViewModel
+            {
+                appointment_id= appointment.AppointmentID,
+                currentUserID = appointment.UserID,
+                selecktedDoctorID = appointment.DoctorID,
+                policlinicID = appointment.Policlinicname,
+                Date = appointment.Date,
+                Time = appointment.Time
+            });
+
+            return View(appointmentViewModels);
+
+        }
+
+        //User randevularını listele
+        public async Task<IActionResult> Userappointment()
+        {
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            List<Appointments> appointmentsList = _databaseContext.Appointments
+        .Where(a => a.UserID == userId)
+        .ToList();
+            // Convert Appointments to AppointmentViewModel
+            IEnumerable<AppointmentViewModel> appointmentViewModels = appointmentsList.Select(appointment => new AppointmentViewModel
+            {
+                appointment_id = appointment.AppointmentID,
+                currentUserID = appointment.UserID,
+                selecktedDoctorID = appointment.DoctorID,
+                policlinicID = appointment.Policlinicname,
+                Date = appointment.Date,
+                Time = appointment.Time
+            });
+
+            return View(appointmentViewModels);
+
+        }
+
+
+        //randevu sil
+        public IActionResult deleteAppointment(Guid id)
+        { 
+            List<Appointments> appointmentsList = _databaseContext.Appointments.Where(a => a.AppointmentID == id).ToList();
+
+            // Eğer randevu bulunduysa sil
+            foreach (var app in appointmentsList)
+            {
+                _databaseContext.Appointments.Remove(app);
+            }
+
+            _databaseContext.SaveChanges();
+            String userid = new String(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            User user = _databaseContext.Users.SingleOrDefault(x => x.Id == userid);
+            Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id == userid);
+            
+            if(user != null && doctor == null){
+                return RedirectToAction(nameof(Userappointment));
+
+            }
+            else if(doctor != null && user == null)
+            {
+                return RedirectToAction(nameof(Doktorappointment)); 
+            }
+            else
+            {   // admin ise
+                return RedirectToAction(nameof(Index));
+
+
+            }
+
+
+        }
+
     }
+
 }

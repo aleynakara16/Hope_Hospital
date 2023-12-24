@@ -8,6 +8,8 @@ namespace Hospital_reservation_system.Models
 {
     public class AppointmentViewModel
     {
+        public Guid appointment_id { get; set; }
+
         [Required(ErrorMessage = "Bu alanı boş bırakamazsınız!")]
         public String currentUserID { get; set; }
 

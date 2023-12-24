@@ -18,7 +18,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-1">
-					<h2 class="heading-section">RANDEVULARIM</h2>
+					<h2 class="heading-section">RANDEVULAR</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -27,11 +27,12 @@
 						<table class="table">
 							<thead class="thead-dark">
 								<tr>
-									<th>User ID</th>
-									<th>Selected Doctor ID</th>
-									<th>Policlinic ID</th>
-									<th>Date</th>
-									<th>Time</th>
+									<th>Randevu ID</th>
+									<th>Kullanıcı TC</th>
+									<th>Doktor TC</th>
+									<th>Poliklinik ID</th>
+									<th>Tarih</th>
+									<th>Zaman</th>
 									<th>&nbsp;</th>
 								</tr>
 							</thead>
@@ -39,13 +40,14 @@
 								@foreach (AppointmentViewModel randevu in Model)
 								{
 									<tr class="alert" role="alert">
+										<td>@randevu.appointment_id</td>
 										<td>@randevu.currentUserID</td>
 										<td>@randevu.selecktedDoctorID</td>
 										<td>@randevu.policlinicID</td>
 										<td>@randevu.Date</td>
 										<td>@randevu.Time</td>
 										<td>
-											<a asp-controller="" asp-action="" asp-route-id="">
+											<a asp-controller="Appointment" asp-action="deleteAppointment" asp-route-id="@randevu.appointment_id">
 												<span aria-hidden="true"><i class="fa fa-close"></i></span>
 											</a>
 										</td>

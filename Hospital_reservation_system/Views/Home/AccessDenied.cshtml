@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Erişim Engellendi";
+}
+
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <br />
+        <br />
+        <h2 class="display-4 border-bottom text-center pb-2">@ViewData["Title"]</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <h1 class="text-danger text-center">İlgili Sayfaya Erişiminiz Yoktur.</h1>
+        <div class="text-center">
+            <a asp-action="Index" asp-controller="Home" class="btn btn-primary">Anasayfaya Gidiniz.</a>
+        </div>
+    </div>
+</div>
