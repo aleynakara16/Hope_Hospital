@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -27,7 +28,7 @@
                 }
                 else
                 {
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ANA SAYFA</a>
 
                 }
 
@@ -49,12 +50,18 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="AdminEkle">Admin Ekle</a>
                                 </li>
+                                <li class="nav-item ms-auto">
+                                    <a class="nav-link "> </a>
+                                </li>
                             }
                              if (User.IsInRole("user"))
                             {
                               
                                 <li class="nav-item">
                                     <a class="nav-link text-light" asp-area="" asp-controller="Appointment" asp-action="Userappointment">Randevularım</a>
+                                </li>
+                                <li class="nav-item ms-auto">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Profil">Profil </a>
                                 </li>
                             }
                             if (User.IsInRole("doctor"))
@@ -63,11 +70,12 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-light" asp-area="" asp-controller="Appointment" asp-action="Doktorappointment">Randevularım</a>
                                 </li>
+                                <li class="nav-item ms-auto">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Profil">Profil </a>
+                                </li>
                             }
                       
-                            <li class="nav-item ms-auto">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Profil">@User.FindFirst("Username").Value </a>
-                            </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Logout">Çıkış yap</a>
                             </li>
@@ -78,9 +86,10 @@
                                 <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Login">Giriş Yap</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Register">Kayadol</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Register">Kayıt ol</a>
                             </li>
                         }
+                        
                     </ul>
                 </div>
             </div>

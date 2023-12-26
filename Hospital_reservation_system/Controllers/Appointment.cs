@@ -10,16 +10,18 @@ using System.Security.Claims;
 
 namespace Hospital_reservation_system.Controllers
 {
-	public class Appointment : Controller
+    [Authorize]
+    public class Appointment : Controller
     {
         private readonly DatabaseContext _databaseContext;
 
-        public Appointment(DatabaseContext databaseContext, IConfiguration configuration)
+        public Appointment(DatabaseContext databaseContext)
         {
             _databaseContext = databaseContext;
+   
         }
         //randevu listeleme
-		public IActionResult Create()
+        public IActionResult Create()
         {
             PopliclicDropdowns(); // Dropdown listelerini dolduran yardımcı metod
 

@@ -1,9 +1,10 @@
 ﻿using Hospital_reservation_system.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Hospital_reservation_system.Controllers
+namespace hastane_.Controllers
 {
     public class HomeController : Controller
     {
@@ -19,6 +20,10 @@ namespace Hospital_reservation_system.Controllers
             return View();
         }
 
+        public IActionResult Privacy()
+        {
+            return View();
+        }
         public IActionResult AccessDenied()
         {
             return View();
@@ -28,5 +33,6 @@ namespace Hospital_reservation_system.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }    }
+        }
+    }
 }

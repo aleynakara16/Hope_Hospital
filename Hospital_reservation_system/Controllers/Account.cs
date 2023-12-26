@@ -11,17 +11,18 @@ using System.Data;
 
 namespace Hospital_reservation_system.Controllers
 {
-	[Authorize]
+    [Authorize]
 	public class Account : Controller
 	{
 		private readonly DatabaseContext _databaseContext;
 
-		public Account(DatabaseContext databaseContext, IConfiguration configuration)
+
+        public Account(DatabaseContext databaseContext)
 		{
 			_databaseContext = databaseContext;
-		}
+        }
 
-		[AllowAnonymous]
+        [AllowAnonymous]
 		public IActionResult Login()
 		{
 			return View();
@@ -187,13 +188,14 @@ namespace Hospital_reservation_system.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult ProfileChangeFullName([Required][StringLength(50)] string? Username)
+		public IActionResult ProfileChangeFullName([Required] string? Username)
 		{
 			if (ModelState.IsValid)
 			{
 				String userid = new String(User.FindFirstValue(ClaimTypes.NameIdentifier));
-				User user = _databaseContext.Users.SingleOrDefault(x => x.Id.ToString() == userid);
-				Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id.ToString() == userid);
+
+				User user = _databaseContext.Users.SingleOrDefault(x => x.Id == userid);
+				Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id == userid);
 
 				if (User.IsInRole("user"))
 				{
@@ -221,9 +223,11 @@ namespace Hospital_reservation_system.Controllers
 			if (ModelState.IsValid)
 			{
 				String userid = new String(User.FindFirstValue(ClaimTypes.NameIdentifier));
-				User user = _databaseContext.Users.SingleOrDefault(x => x.Id.ToString() == userid);
-				Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id.ToString() == userid);
-				if (User.IsInRole("user"))
+
+				User user = _databaseContext.Users.SingleOrDefault(x => x.Id == userid);
+				Doctor doctor = _databaseContext.Doctors.SingleOrDefault(x => x.Id == userid);
+				Entities.Admin admin = _databaseContext.Admins.SingleOrDefault(x => x.Admin_Id.ToString() == userid);
+                if (User.IsInRole("user"))
 				{
 					user.Password = password;
 					_databaseContext.SaveChanges();
@@ -235,8 +239,11 @@ namespace Hospital_reservation_system.Controllers
 					_databaseContext.SaveChanges();
 
 				}
-				else { }
-				ViewData["result"] = "PasswordChanged";
+				else {
+					admin.Admin_Password = password;
+                    _databaseContext.SaveChanges();
+                }
+                ViewData["result"] = "PasswordChanged";
 			}
 
 			ProfileInfoLoader();

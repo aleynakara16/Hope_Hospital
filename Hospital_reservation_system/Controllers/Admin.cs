@@ -12,7 +12,7 @@ namespace Hospital_reservation_system.Controllers
     {
         private readonly DatabaseContext _databaseContext;
 
-        public Admin(DatabaseContext databaseContext, IConfiguration configuration)
+        public Admin(DatabaseContext databaseContext)
         {
             _databaseContext = databaseContext;
         }

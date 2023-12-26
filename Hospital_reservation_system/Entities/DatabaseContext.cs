@@ -62,7 +62,7 @@ namespace Hospital_reservation_system.Entities
                 .ValueGeneratedNever(); // ID'nin otomatik oluşturulmasını engelle
         }
 
-        public DbSet<Hospital_reservation_system.Entities.Appointment>? Appointment { get; set; }
+        public DbSet<Hospital_reservation_system.Entities.Appointments>? Appointment { get; set; }
 
     }
 }

@@ -10,39 +10,47 @@
     </div>
 </div>
 
-<div class="row mt-4">
-    <div class="col-4">
+<html>
+<body>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-4 offset-4">
 
-        <div class="mb-4">
-            <div asp-validation-summary="All" class="text-danger small"></div>
+                <div class="mb-4">
+                    <div asp-validation-summary="All" class="text-danger small"></div>
+                </div>
+
+                <form method="post" asp-action="ProfileChangeFullName">
+                    <div class="form-group">
+                        <label class="form-label small">Username</label>
+                        <div class="input-group mb-3">
+                            <input name="Username" type="text" class="form-control" placeholder="Username..." value="@ViewData["Username"]" />
+                            <button class="btn btn-secondary" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Save</button>
+                        </div>
+                    </div>
+                </form>
+
+                <form method="post" asp-action="ProfileChangePassword">
+                    <div class="form-group">
+                        <label class="form-label small">New Password</label>
+                        <div class="input-group">
+                            <input name="password" type="password" class="form-control" placeholder="P@ssW0rd!" />
+                            <button class="btn btn-secondary" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Save</button>
+                        </div>
+                        @if (ViewData["result"] != null && ViewData["result"] == "PasswordChanged")
+                        {
+                            <span class="text-success small">Password updated.</span>
+                        }
+                    </div>
+                </form>
+
+            </div>
         </div>
 
-        <form method="post" asp-action="ProfileChangeFullName">
-            <div class="form-group">
-                <label class="form-label small">Username</label>
-                <div class="input-group mb-3">
-                    <input name="Username" type="text" class="form-control" placeholder="Username..." value="@ViewData["Username"]" />
-                    <button class="btn btn-secondary" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Save</button>
-                </div>
-            </div>
-        </form>
-
-        <form method="post" asp-action="ProfileChangePassword">
-            <div class="form-group">
-                <label class="form-label small">New Password</label>
-                <div class="input-group">
-                    <input name="password" type="password" class="form-control" placeholder="P@ssW0rd!" />
-                    <button class="btn btn-secondary" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Save</button>
-                </div>
-                @if (ViewData["result"] != null && ViewData["result"] == "PasswordChanged")
-                {
-                    <span class="text-success small">Password updated.</span>
-                }
-            </div>
-        </form>
-
     </div>
-</div>
+
+</body>
+</html>
 
 @section Scripts{
     @if (ViewData["result"] != null && ViewData["result"] == "PasswordChanged")

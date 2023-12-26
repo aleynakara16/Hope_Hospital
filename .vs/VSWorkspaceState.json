@@ -9,6 +9,6 @@
     "\\Hospital_reservation_system\\Views\\Home",
     "\\Hospital_reservation_system\\Views\\Shared"
   ],
-  "SelectedNode": "\\Hospital_reservation_system\\Views\\Appointment\\Index.cshtml",
+  "SelectedNode": "\\Hospital_reservation_system\\Views\\Admin\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
